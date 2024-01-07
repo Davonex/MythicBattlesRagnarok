@@ -880,7 +880,11 @@
         "talent2": "Bolster",
         "talent3": "Mobility",
         "power1": "Divines Link",
+        "pc1": 0,
+        "pt1": "Permanent",
         "power2": "Weaving the threads of the Future ",
+        "pc2": 1,
+        "pt2": "Offensive",
         "desct1": "during the calculation of the effective defence value of a normal or area attack, if another allied unit is in the same area, the unit with the Close Protection talent gains +1 defence. ",
         "desct2": "during the calculation of the effective offence\nand defence values of a normal or area attack, the allied\ntroop units in the same area as the unit with the Bolster\ntalent gain +1 offence and +1 defence. ",
         "desct3": "a unit with the Mobility talent can walk even after having carried out an attack."
