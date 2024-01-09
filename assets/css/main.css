@@ -1,0 +1,88 @@
+body {
+    color: rgb(35, 31, 32);
+    background-image: url(../images/bg.png);
+    background-position: -45px -45px;
+    padding: 10px;
+    
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: Skranji ,"Liberation Sans Narrow", sans-serif;
+    font-variant-caps: small-caps;
+  }
+
+.half {
+    width:16px;
+}
+
+.unit-talents {   text-align:center;    }
+.talent {margin: 2px;padding: 2px ;font-size: 10px ;}
+
+.unit-titans {
+    background-color: #86b0b5;
+    border: 4px solid #2d5e64;
+}
+.unit-titans .unit-power { background-color: #a1b1b3;}
+
+.unit-gods {
+    background-color: #f4c37a;
+    border: 4px solid #b68029;
+}
+.unit-gods .unit-power { background-color: #c3b497;}
+
+.unit-monsters {
+    background-color: #b8c686;
+    border: 4px solid #7e8c55;
+}
+.unit-monsters .unit-power { background-color: #adb39d;}
+
+.unit-img {width:100%}
+.unit-name {    padding: 4px 0px; padding-left: 4px;}
+.unit-name img {width:80%;}
+.unit-act { padding-left : 6px; }
+.unit-act img {width:28px;}
+.unit-aow { padding-right : 6px; }
+.unit-aow img { height:17px}
+
+
+
+.display-class-0 {position:absolute;right:15px;top:4px;width:18%}
+.display-class-1 {position:absolute;right:0px;top:4px;width:18%}
+
+.unit-car { position: relative!important; }
+.unit-car img {width:100%;height:100%}
+
+
+.display-car {position:absolute;bottom:-4px;color:aliceblue;width: 20px;
+    text-align: center;}
+.unit-off { left:3%;}
+.unit-def { left:17%;}
+.unit-ran { left:33%;}
+.unit-mov { left:50%;}
+.unit-pow { left:66%;}
+.unit-vit { left:82%;}
+
+/* .bar .bar-item{padding:4px 2px;float:left;width:100%;border:none;display:block;outline:0} */
+
+.unit-powers {
+    margin-left: 8px;margin-right: 8px;
+    padding: 4px 0px;
+}
+
+
+.unit-power {
+    margin: 2px 0px;
+    padding: 0px 4px;
+    font-size: 12px;   
+}
+.unit-power span {padding-left: 4px}
+.unit-power-type { width:14px;}
+.unit-power-aow {text-align: left; float: right; width: 8px;}
+
+.unit-row:after,.unit-row:before {content:"";display:table;clear:both}
+.unit-col {float:left;width:100%}
+
+
+
+
+  
