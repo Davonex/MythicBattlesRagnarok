@@ -6,62 +6,71 @@
  */
 class Unit {
 
-	/* Construcotr */
-    constructor(Id,Name,RecruitementPoint,Type,Offence,Defence,Range,Vitality) {
-    this._id = Id
-    this._name = Name
-    this._rp = RecruitementPoint
-    this._type = Type
-    this._offence = Offence
-    this._defence = Defence
-    this._range = Range
-    this._vitality = Vitality
-    this._talents = []
-    this._class = []
-    this._power =[]
-    this._act = 0
-    this._aow = 0
-	}
-
-    // Set List Class
-    set Class(cl) { this._class.push(cl);}
-
-    // Set list talents of unit 
+    /**
+     * @constructor
+     * @param {Object} Objet - Objet from the Units.json file (One Unit)
+     */
+    constructor(Objet) {
+        this._id = Objet.id
+        this._name = Objet.name
+        this._rp = Objet.rp
+        this._type = Objet.type
+        this._offence = Objet.off
+        this._defence = Objet.def
+        this._range = Objet.ran
+        this._vitality = Objet.vit
+        this._act = Objet.act
+        this._aow = Objet.aow
+        this._box = Objet.box
+        //this._talents = [Objet?.talent1,Objet?.talent2,Objet?.talent3]
+        this._class = []
+        Objet.class?.split(',').forEach ((item) => this._class.push(item) )
+        this._talents = []
+        if (typeof (Objet.talent1) !== 'undefined' ) { this.Talent = Objet.talent1}
+        if (typeof (Objet.talent2) !== 'undefined' ) { this.Talent = Objet.talent2}
+        if (typeof (Objet.talent3) !== 'undefined' ) { this.Talent = Objet.talent3}
+        //this._class = Objet.class
+        this._power =[]
+        if (typeof (Objet.power1) !== 'undefined' ) { 
+            this.Power = {"name":Objet.power1,"type":Objet.pt1,"cost":Objet.pc1} }
+        if (typeof (Objet.power2) !== 'undefined' ) { 
+            this.Power = {"name":Objet.power2,"type":Objet.pt2,"cost":Objet.pc2} }
+        if (typeof (Objet.power3) !== 'undefined' ) { 
+            this.Power = {"name":Objet.power3,"type":Objet.pt3,"cost":Objet.pc3} }        
+    }
+    
+    /**
+     *  @param {string} tal - One of talents of unit
+     */
     set Talent(tal) { this._talents.push(tal);}
-
-    // Set list power of unit 
+    /**
+     * Set list power of unit 
+     * @param {string} pow - One of powers of unit
+     */
     set Power(pow) { this._power.push(pow);}
 
-    // Set # activation card
-    set Activation(value) { this._act = value}
-
-    // Set # activation card
-    set ArtOfWar(value) { this._aow = value}
-
+  
     /**
      * AddCard : Add Html code for this Unit
      */
     AddCard () {
         const Cards = document.getElementById ("Cards")
-        const OneCard = document.createElement("div")
+
+        const OneCard =  this._CreateDivWithClass(["w3-col","m6","l4","w3-round","unit-"+this._type.toLowerCase()])
         // Add class list 
-        OneCard.classList.add("w3-col","m6","l4","w3-round","unit-"+this._type.toLowerCase())
         OneCard.title = this._name
         OneCard.id = this._id
         // Add Image part 
-            const ImagePart = document.createElement("div")
-            ImagePart.classList.add("w3-col","s6","m6","l6","w3-display-container")
-                const ImageUnit = document.createElement("img")
-                ImageUnit.classList.add("unit-img","w3-bar-item")
-                ImageUnit.src = "./assets/images/" + this._id + ".png"
-            ImagePart.append(ImageUnit)
-            if (this._act !== 0) ImagePart.append(this._AddIco("act",this._act,"left"))
-            if (this._aow !== 0) ImagePart.append(this._AddIco("aow",this._aow,"right"))
+            const ImagePart =  this._CreateDivWithClass(["w3-col","s6","m6","l6","w3-display-container"])
+            const ImageUnit = this._CreateImgWithClass(["unit-img","w3-bar-item"],"./assets/images/" + this._id + ".png")
+            ImagePart.appendChild(ImageUnit)
+            if (this._act !== 0) ImagePart.appendChild(this._AddIco("act",this._act,"left"))
+            if (this._aow !== 0) ImagePart.appendChild(this._AddIco("aow",this._aow,"right"))
             //<img id="unit-img" class="unit-img w3-bar-item" style="width:100%">
             // Add Class
             this._AddClass (ImagePart)
 
-            OneCard.append(ImagePart) 
+            OneCard.appendChild(ImagePart) 
             
         // Add Info Part 
             const InfoPart = document.createElement("div")
@@ -79,6 +88,32 @@ class Unit {
 
     }
 
+    /**
+     * 
+     * @param {string[]} ClName 
+     * @returns 
+     */
+    _CreateDivWithClass(ClName = []) {
+        const HtmlElementDiv = document.createElement("div")
+        ClName.forEach((element,index) => {
+            HtmlElementDiv.classList.add(element)
+        })
+        return HtmlElementDiv
+    }
+    /**
+     * 
+     * @param {string[]} ClName 
+     * @param {string} Source 
+     * @returns 
+     */
+    _CreateImgWithClass(ClName = [],Source = "") {
+        const HtmlElementImg = document.createElement("img")
+        ClName.forEach((element,index) => {
+            HtmlElementImg.classList.add(element)
+        })
+        HtmlElementImg.src = Source
+        return HtmlElementImg
+    }
 
     /**
      * Private Add Ico AOW and activation Card
@@ -250,40 +285,14 @@ class Units {
         }
         // console.log ("add obj", obj)
     }
-    /**
-     * 
-     */
-    ShowCurrent (){
-        this._list[this.CurentUnit].Show ();
-        console.log (this._list[this.CurentUnit]); 
-
-    }
-    /**
-     * 
-     * @param {*} obj 
-     * @param {*} target 
-     */
-    // AddMenu (obj) {
-    //     const sel = document.getElementById(obj._type + "-select")
-    //     const opt = document.createElement("a")
-    //     sel.appendChild(opt);
-    //          opt.setAttribute("value", obj._id); 
-    //          opt.text = obj._name
-    //          opt.href = "#" + obj._name
-    //          opt.className = "w3-bar-item w3-button unit"
-    //     opt.addEventListener('click',(PointerEvent)=>{
-    //         //console.log (PointerEvent)
-    //         this.CurentUnit = PointerEvent.currentTarget.attributes["value"].value
-    //         //console.log (PointerEvent.currentTarget.attributes["value"].value)
-    //         this.ShowCurrent ()
-    //     })
-    // }
+    
 }
 
 
 
 
-fetch("https://raw.githubusercontent.com/Davonex/MythicBattlesRagnarok/main/asset/units.json")
+//fetch("https://raw.githubusercontent.com/Davonex/MythicBattlesRagnarok/main/asset/units.json")
+fetch("http://127.0.0.1:5500/assets/units.json")
     .then(response => response.json())
     .then(response => CreateListe(response))
     .catch(error => console.log(error))
@@ -294,38 +303,11 @@ function CreateListe (units) {
      * Creation du select et de la list de unit 
      */
     
-    for (const property in units) {
-        // Create Obj Unit
-        let obj = new Unit(
-            units[property].id,
-            units[property].name,
-            units[property].pr,
-            units[property].type,
-            units[property].off,
-            units[property].def,
-            units[property].ran,
-            units[property].vit
-        )
-        if (typeof (units[property].talent1) !== 'undefined' ) { obj.Talent = units[property].talent1}
-        if (typeof (units[property].talent2) !== 'undefined' ) { obj.Talent = units[property].talent2}
-        if (typeof (units[property].talent3) !== 'undefined' ) { obj.Talent = units[property].talent3}
-        obj.Activation = units[property].act
-        obj.ArtOfWar = units[property].aow
-        //console.log (units[property].class)
-        if (typeof (units[property].class) !== 'undefined' ) {
-            units[property].class.split(',').forEach ((item) => obj.Class = item )
-        }
-        if (typeof (units[property].power1) !== 'undefined' ) { 
-            obj.Power = {"name":units[property].power1,"type":units[property].pt1,"cost":units[property].pc1} }
-        if (typeof (units[property].power2) !== 'undefined' ) { 
-            obj.Power = {"name":units[property].power2,"type":units[property].pt2,"cost":units[property].pc2} }
-        if (typeof (units[property].power3) !== 'undefined' ) { 
-            obj.Power = {"name":units[property].power3,"type":units[property].pt3,"cost":units[property].pc3} } 
+    for (const property in units) {            
+        let obj = new Unit(units[property]);
         Rag.Add(obj);
-      }
-      
-      //Rag.ShowCurrent()
-      console.log("Fetch load succed")
+    }
+    console.log("Fetch load succed")
 }
 
 const UnitLinks = document.querySelectorAll("div#type-select a").forEach(a => {
@@ -348,4 +330,4 @@ const UnitLinks = document.querySelectorAll("div#type-select a").forEach(a => {
 
 
 
-    const Rag = new Units;
+const Rag = new Units;
