@@ -7,9 +7,10 @@
 class Unit {
 
 	/* Construcotr */
-    constructor(Id,Name,Type,Offence,Defence,Range,Vitality) {
+    constructor(Id,Name,RecruitementPoint,Type,Offence,Defence,Range,Vitality) {
     this._id = Id
     this._name = Name
+    this._rp = RecruitementPoint
     this._type = Type
     this._offence = Offence
     this._defence = Defence
@@ -36,28 +37,6 @@ class Unit {
 
     // Set # activation card
     set ArtOfWar(value) { this._aow = value}
-    
-    /**
-     * 
-     */
-    Show () {
-        //document.getElementById("unit-img").src = "./assets/images/" + this._id + ".png"
-        //document.getElementById("unit-name").innerHTML = this._name
-        // if (this._type === "Troops") {
-        //     document.getElementById("unit-name").innerHTML = this._name
-        //     document.getElementById("unit-name-img").src = ""
-        // } else {
-        //     document.getElementById("unit-name-img").src = "./assets/images/" + this._id + "_c.png"
-        // }
-        //document.getElementById("unit-name").innerHTML = this._name
-            //document.getElementById("unit-type").innerHTML = this._type
-        // Activation Card
-            //this._ShowIco ("act", this._act)
-        // Art Of War
-            //this._ShowIco ("aow", this._aow)  
-        // Talents
-            //this._ShowTalents (this._talents)
-    }
 
     /**
      * AddCard : Add Html code for this Unit
@@ -67,7 +46,7 @@ class Unit {
         const OneCard = document.createElement("div")
         // Add class list 
         OneCard.classList.add("w3-col","m6","l4","w3-round","unit-"+this._type.toLowerCase())
-        OneCard.title = this._name.toLowerCase()
+        OneCard.title = this._name
         OneCard.id = this._id
         // Add Image part 
             const ImagePart = document.createElement("div")
@@ -79,6 +58,9 @@ class Unit {
             if (this._act !== 0) ImagePart.append(this._AddIco("act",this._act,"left"))
             if (this._aow !== 0) ImagePart.append(this._AddIco("aow",this._aow,"right"))
             //<img id="unit-img" class="unit-img w3-bar-item" style="width:100%">
+            // Add Class
+            this._AddClass (ImagePart)
+
             OneCard.append(ImagePart) 
             
         // Add Info Part 
@@ -86,9 +68,7 @@ class Unit {
             InfoPart.classList.add("w3-col","s6","m6","l6","w3-display-container")
             // Add Name
             InfoPart.append(this._AddName(this._id))
-            OneCard.append(InfoPart) 
-            // Add Class
-            this._AddClass (InfoPart)
+            OneCard.append(InfoPart)
             // Add Talents 
             this._AddTalents (InfoPart)
             // Char
@@ -125,8 +105,21 @@ class Unit {
         const div = document.createElement("div")
         div.classList.add("w3-row","unit-name")
         const img = document.createElement("img")
-        img.src = "./assets/images/" + id + "_c.png"
+            //img.src = "./assets/images/" + id + "_c.png"
+            img.src = "./assets/images/"+ this._type +"_c.png"
+            //const div_txt = document.createElement("div")
+           // div_txt.classList.add ("unit-name-txt")
+                const span_name = document.createElement("span")
+                const cl  = this._name.length > 13 ? "name_large" : "name"
+                span_name.classList.add(cl)
+                span_name.textContent = this._name
+                div.append(span_name)
+                const span_rp = document.createElement("span")
+                span_rp.classList.add("rp")
+                span_rp.textContent = this._rp
+                div.append(span_rp)
         div.append(img)
+        //div.append(div_txt)
         return div
     }
 
@@ -153,7 +146,8 @@ class Unit {
         div.classList.add("unit-car")
         // Add Background tabe
             const img = document.createElement("img")
-            img.src = "./assets/images/table_car.png"  
+            img.src = "./assets/images/table.png"  
+            //img.src = "./assets/images/table_car.png"  
             div.appendChild(img)  
                 //offence
                 const off = document.createElement("span")
@@ -233,6 +227,8 @@ class Unit {
 }
 
 
+
+
 class Units {
     /* construtor */
     constructor () {
@@ -242,10 +238,12 @@ class Units {
 
     Add (obj) {
         this._list[obj._id] = obj
-        this.AddMenu(obj)
-        if (obj._type === "Titans" 
-            || obj._type === "Gods" 
-            || obj._type === "Monsters" 
+        //this.AddMenu(obj)
+        if ( 
+             obj._type === "Titans" 
+             || obj._type === "Gods" 
+             || obj._type === "Monsters" 
+             ||  obj._type === "Heroes"
             ) {
             obj.AddCard () 
             console.log ("add obj", obj)
@@ -265,21 +263,21 @@ class Units {
      * @param {*} obj 
      * @param {*} target 
      */
-    AddMenu (obj,target="unit-select") {
-        const sel = document.getElementById(obj._type + "-select")
-        const opt = document.createElement("a")
-        sel.appendChild(opt);
-             opt.setAttribute("value", obj._id); 
-             opt.text = obj._name
-             opt.href = "#" + obj._name
-             opt.className = "w3-bar-item w3-button unit"
-        opt.addEventListener('click',(PointerEvent)=>{
-            //console.log (PointerEvent)
-            this.CurentUnit = PointerEvent.currentTarget.attributes["value"].value
-            //console.log (PointerEvent.currentTarget.attributes["value"].value)
-            this.ShowCurrent ()
-        })
-    }
+    // AddMenu (obj) {
+    //     const sel = document.getElementById(obj._type + "-select")
+    //     const opt = document.createElement("a")
+    //     sel.appendChild(opt);
+    //          opt.setAttribute("value", obj._id); 
+    //          opt.text = obj._name
+    //          opt.href = "#" + obj._name
+    //          opt.className = "w3-bar-item w3-button unit"
+    //     opt.addEventListener('click',(PointerEvent)=>{
+    //         //console.log (PointerEvent)
+    //         this.CurentUnit = PointerEvent.currentTarget.attributes["value"].value
+    //         //console.log (PointerEvent.currentTarget.attributes["value"].value)
+    //         this.ShowCurrent ()
+    //     })
+    // }
 }
 
 
@@ -300,7 +298,8 @@ function CreateListe (units) {
         // Create Obj Unit
         let obj = new Unit(
             units[property].id,
-            units[property].nom,
+            units[property].name,
+            units[property].pr,
             units[property].type,
             units[property].off,
             units[property].def,
@@ -328,6 +327,15 @@ function CreateListe (units) {
       //Rag.ShowCurrent()
       console.log("Fetch load succed")
 }
+
+const UnitLinks = document.querySelectorAll("div#type-select a").forEach(a => {
+    a.addEventListener('click',(e)=>{
+            console.log (e.currentTarget)
+            //this.CurentUnit = PointerEvent.currentTarget.attributes["value"].value
+            //console.log (PointerEvent.currentTarget.attributes["value"].value)
+            //this.ShowCurrent ()
+        })
+})
 
 
 // const UnitLinks = document.document.querySelectorAll('a.unit').forEach(a => {
