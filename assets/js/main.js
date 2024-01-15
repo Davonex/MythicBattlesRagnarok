@@ -56,35 +56,32 @@ class Unit {
     AddCard () {
         const Cards = document.getElementById ("Cards")
 
-        const OneCard =  this._CreateDivWithClass(["w3-col","m6","l4","w3-round","unit-"+this._type.toLowerCase()])
+        this._HTMLCard =  this._CreateDivWithClass(["w3-col","m6","l4","w3-round","unit-"+this._type.toLowerCase()])
         // Add class list 
-        OneCard.title = this._name
-        OneCard.id = this._id
+        this._HTMLCard.title = this._name
+        this._HTMLCard.id = this._id
         // Add Image part 
             const ImagePart =  this._CreateDivWithClass(["w3-col","s6","m6","l6","w3-display-container"])
             const ImageUnit = this._CreateImgWithClass(["unit-img","w3-bar-item"],"./assets/images/" + this._id + ".png")
             ImagePart.appendChild(ImageUnit)
             if (this._act !== 0) ImagePart.appendChild(this._AddIco("act",this._act,"left"))
             if (this._aow !== 0) ImagePart.appendChild(this._AddIco("aow",this._aow,"right"))
-            //<img id="unit-img" class="unit-img w3-bar-item" style="width:100%">
-            // Add Class
             this._AddClass (ImagePart)
-
-            OneCard.appendChild(ImagePart) 
+            this._HTMLCard.appendChild(ImagePart) 
             
         // Add Info Part 
-            const InfoPart = document.createElement("div")
-            InfoPart.classList.add("w3-col","s6","m6","l6","w3-display-container")
+            const InfoPart =  this._CreateDivWithClass(["w3-col","s6","m6","l6","w3-display-container"])
             // Add Name
-            InfoPart.append(this._AddName(this._id))
-            OneCard.append(InfoPart)
+            //InfoPart.append(this._AddName(this._id))
+            this._AddName (InfoPart)
+            this._HTMLCard.append(InfoPart)
             // Add Talents 
             this._AddTalents (InfoPart)
             // Char
             this._AddChar (InfoPart)
             // Power
             this._AddPower (InfoPart)
-        Cards.appendChild(OneCard)
+        Cards.appendChild(this._HTMLCard)
 
     }
 
@@ -123,39 +120,32 @@ class Unit {
      */
     _AddIco (ico,nbr,where){
         //console.log (ico,nbr)
-        const div = document.createElement("div")
-        div.classList.add("w3-display-bottom"+where,"unit-" + ico)
-        const img = document.createElement("img")
-        img.src = "./assets/images/" + ico + "_" + nbr + ".png"
+        const div = this._CreateDivWithClass(["w3-display-bottom"+where,"unit-" + ico])
+        const img = this._CreateImgWithClass([],"./assets/images/" + ico + "_" + nbr + ".png")
         div.append(img)
         return div
     }
 
     /**
-     * Private add img name
-     * @param {id unit} id 
+     * Private add  name
+     * @param {id} id 
      * @returns element
      */
-    _AddName (id) {
-        const div = document.createElement("div")
-        div.classList.add("w3-row","unit-name")
-        const img = document.createElement("img")
-            //img.src = "./assets/images/" + id + "_c.png"
-            img.src = "./assets/images/"+ this._type +"_c.png"
-            //const div_txt = document.createElement("div")
-           // div_txt.classList.add ("unit-name-txt")
-                const span_name = document.createElement("span")
-                const cl  = this._name.length > 13 ? "name_large" : "name"
-                span_name.classList.add(cl)
-                span_name.textContent = this._name
-                div.append(span_name)
-                const span_rp = document.createElement("span")
-                span_rp.classList.add("rp")
-                span_rp.textContent = this._rp
-                div.append(span_rp)
+    _AddName (ParentEle) {
+        const div = this._CreateDivWithClass(["w3-row","unit-name"])
+        const img = this._CreateImgWithClass([],"./assets/images/"+ this._type +"_c.png")
+            const span_name = document.createElement("span")
+            const cl  = this._name.length > 13 ? "name_large" : "name"
+            span_name.classList.add(cl)
+            span_name.textContent = this._name
+            div.append(span_name)
+            const span_rp = document.createElement("span")
+            span_rp.classList.add("rp")
+            span_rp.textContent = this._rp
+            div.append(span_rp)
         div.append(img)
         //div.append(div_txt)
-        return div
+        ParentEle.append(div)
     }
 
     /**
@@ -217,16 +207,16 @@ class Unit {
         const div = document.createElement("div") 
         div.classList.add("unit-powers")   
         this._power.forEach((obj,index) => {
-            const divUP = document.createElement("div")  
-                divUP.classList.add("unit-power")
-            const img = document.createElement("img")
-                let color = "black"
-                if ( index % 2 === 1) color = "white"
-                img.src = "./assets/images/" + obj.type + "_" + color +".png"  
-                img.classList.add("unit-power-type")
-                img.title = obj.type
-                divUP.appendChild(img) 
+
+            const divUP = this._CreateDivWithClass(["unit-power"])
+            let color = index % 2 === 1 ? "white" : "black"
+            const img = this._CreateImgWithClass(["unit-power-type"],"./assets/images/" + obj.type + "_" + color +".png")
+            img.title = obj.type
+            divUP.appendChild(img) 
+
             const span = document.createElement("span")
+                const cl  = this._name.length > 13 ? "power_name_large" : "power_name"
+                span.classList.add (cl)
                 span.textContent = obj.name
                 divUP.appendChild(span) 
             for (let i = 0; i < obj.cost ; i++) {
@@ -303,9 +293,13 @@ function CreateListe (units) {
      * Creation du select et de la list de unit 
      */
     
-    for (const property in units) {            
-        let obj = new Unit(units[property]);
-        Rag.Add(obj);
+    for (const property in units) { 
+        if ( 
+            units[property].name === "ANGRBODA" 
+           ) {           
+                let obj = new Unit(units[property]);
+                Rag.Add(obj);
+           }
     }
     console.log("Fetch load succed")
 }
