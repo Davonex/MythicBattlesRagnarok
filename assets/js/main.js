@@ -65,6 +65,7 @@ class Unit {
             const ImageUnit = this._CreateImgWithClass(["unit-img","w3-bar-item"],"./assets/images/" + this._id + ".png")
             ImagePart.appendChild(ImageUnit)
             if (this._act !== 0) ImagePart.appendChild(this._AddIco("act",this._act,"left"))
+            ImagePart.appendChild(this._AddBox())
             if (this._aow !== 0) ImagePart.appendChild(this._AddIco("aow",this._aow,"right"))
             this._AddClass (ImagePart)
             this._HTMLCard.appendChild(ImagePart) 
@@ -91,12 +92,32 @@ class Unit {
      * @returns 
      */
     _CreateDivWithClass(ClName = []) {
-        const HtmlElementDiv = document.createElement("div")
-        ClName.forEach((element,index) => {
-            HtmlElementDiv.classList.add(element)
-        })
-        return HtmlElementDiv
+        return this._CreateXXXWithClass ("div",ClName)
     }
+
+        /**
+     * 
+     * @param {string[]} ClName 
+     * @returns 
+     */
+        _CreateSpanWithClass(ClName = []) {
+            return this._CreateXXXWithClass ("span",ClName)
+        }
+
+
+    /**
+     * @param {htmltag} tag
+     * @param {string[]} ClName 
+     * @returns 
+     */
+    _CreateXXXWithClass(tag,ClName = []) {
+        const HtmlElementTag = document.createElement(tag)
+        ClName.forEach((element,index) => {
+            HtmlElementTag.classList.add(element)
+        })
+        return HtmlElementTag
+    }
+
     /**
      * 
      * @param {string[]} ClName 
@@ -120,12 +141,25 @@ class Unit {
      */
     _AddIco (ico,nbr,where){
         //console.log (ico,nbr)
-        const div = this._CreateDivWithClass(["w3-display-bottom"+where,"unit-" + ico])
+        const HTMLElementdiv = this._CreateDivWithClass(["w3-display-bottom"+where,"unit-" + ico])
         const img = this._CreateImgWithClass([],"./assets/images/" + ico + "_" + nbr + ".png")
-        div.append(img)
-        return div
+        HTMLElementdiv.append(img)
+        return HTMLElementdiv
     }
 
+    /**
+     * 
+     * @returns 
+     */
+    _AddBox() {
+        const HTMLElementdiv = this._CreateDivWithClass(["w3-display-bottommiddle","unit-box"])
+        const HTMLElementspan = this._CreateSpanWithClass()
+        HTMLElementspan.append(this._box.toUpperCase())
+        HTMLElementdiv.append(HTMLElementspan)
+        return HTMLElementdiv
+    }
+    
+    
     /**
      * Private add  name
      * @param {id} id 
@@ -215,7 +249,7 @@ class Unit {
             divUP.appendChild(img) 
 
             const span = document.createElement("span")
-                const cl  = this._name.length > 13 ? "power_name_large" : "power_name"
+                const cl  = obj.name.length > 18 ? "power-name-large" : "power-name"
                 span.classList.add (cl)
                 span.textContent = obj.name
                 divUP.appendChild(span) 
@@ -264,15 +298,15 @@ class Units {
     Add (obj) {
         this._list[obj._id] = obj
         //this.AddMenu(obj)
-        if ( 
-             obj._type === "Titans" 
-             || obj._type === "Gods" 
-             || obj._type === "Monsters" 
-             ||  obj._type === "Heroes"
-            ) {
+        // if ( 
+        //      obj._type === "Titans" 
+        //      || obj._type === "Gods" 
+        //      || obj._type === "Monsters" 
+        //      ||  obj._type === "Heroes"
+        //     ) {
             obj.AddCard () 
             console.log ("add obj", obj)
-        }
+        // }
         // console.log ("add obj", obj)
     }
     
@@ -295,7 +329,15 @@ function CreateListe (units) {
     
     for (const property in units) { 
         if ( 
-            units[property].name === "ANGRBODA" 
+        //    units[property].name === "ANGRBODA" 
+        //    || units[property].name === "BALDR"
+        //    || units[property].name === "FRIGG"
+        //    || units[property].name === "JORMUNGAND"
+           
+                units[property].type === "Titans" 
+                || units[property].type === "Gods" 
+                || units[property].type === "Monsters" 
+                ||  units[property].type === "Heroes"
            ) {           
                 let obj = new Unit(units[property]);
                 Rag.Add(obj);
