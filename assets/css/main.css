@@ -15,18 +15,19 @@ body, h1, h2, h3, h4, h5, h6 {
     width:16px;
 }
 
+.unit-visible {display: none;}
+
 .unit-talents {   text-align:center;    }
-.talent {margin: 2px;padding: 2px ;font-size: 2.0vw ; background-color: #b6802936;}
-@media (min-width:601px) {
-    .talent {font-size: 1.2vw ;}
+
+
+
+
+
+.unit-titans, .unit-gods, .unit-monster {
+    /* transition-timing-function: ease-in-out; */
 }
-@media (min-width:993px) {
-    .talent {font-size: 0.8px ;}
-}
-.unit-titans {
-    background-color: #86b0b5;
-    border: 4px solid #2d5e64;
-}
+
+.unit-titans {    background-color: #86b0b5; border: 4px solid #2d5e64; }
 .unit-titans .unit-power { background-color: #a1b1b3;}
 
 .unit-gods {
@@ -47,13 +48,30 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 .unit-heroes .unit-power { background-color: #afaeae;}
 
+.unit-troops {
+    background-color: #cdcbcb;
+    border: 4px solid #514f4e;
+}
+.unit-troops .unit-power { background-color: #afaeae;}
+
+.talent {margin: 2px;padding: 2px ;font-size: 2.0vw ; background-color: #b6802936;}
+@media (min-width:601px) {
+    .talent {font-size: 1.2vw ;}
+}
+@media (min-width:993px) {
+    .talent {font-size: 0.8px ;}
+}
+
+
 .unit-img {width:100%}
 
 
-.unit-act { padding-left : 6px; }
+.unit-act { padding-left : 6px;bottom: 5px; }
 .unit-act img {width:28px;}
 .unit-aow { padding-right : 6px; }
 .unit-aow img { height:17px}
+.unit-vitality { left: 10px;  bottom: 10px;}
+.unit-vitality img { height:17px}
 
 .unit-box {
     background-color: #000000;
@@ -75,28 +93,44 @@ body, h1, h2, h3, h4, h5, h6 {
 
 
 .display-car {position:absolute;bottom:7px;color:aliceblue;width: 20px; text-align: center;font-size: 4vw;}
+.unit-troops .display-car{ top: 11.5vw;}
 .unit-off { left: 10%;}
+.unit-troops .unit-off { left: 6.5vw;}
 .unit-def { left:25.5%;}
+.unit-troops .unit-def { left:31%;}
 .unit-ran { left:38.5%;}
+.unit-troops .unit-ran { left:49.5%;}
 .unit-mov { left:52%;}
+.unit-troops .unit-mov { left:67%;}
 .unit-pow { left:66%;}
 .unit-vit { left:86%;}
 
+
 @media (min-width:601px) { 
     .display-car {top:4vw;font-size: 2.4vw}
-    .unit-off { left: 9.5%;}
+    .unit-troops .display-car{ top: 6vw;}
+    .unit-off { left: 8.5%;}
+    .unit-troops .unit-off { left: 11.5%;}
     .unit-def { left:22.5%;}
+    .unit-troops .unit-def { left:29.5%;}
     .unit-ran { left:37.5%;}
+    .unit-troops .unit-ran { left:47.5%;}
     .unit-mov { left:52%}   
+    .unit-troops .unit-mov { left:66%}   
     .unit-pow { left:66%;}
     .unit-vit { left:84%;}
 }
 @media (min-width:993px) {
     .display-car {top:2.7vw;font-size: 1.6vw}
+    .unit-troops .display-car{ top: 4vw;}
     .unit-off { left: 9%;}
+    .unit-troops .unit-off { left: 12%;}
     .unit-def { left:22.5%;}
+    .unit-troops .unit-def { left: 30%;}
     .unit-ran { left:37%;}
+    .unit-troops .unit-ran { left:48%;}
     .unit-mov { left:52%}   
+    .unit-troops .unit-mov { left:65%}   
     .unit-pow { left:66%;}
     .unit-vit { left:84%;}
 }
@@ -153,4 +187,4 @@ span.power-name-large {font-size: 3.2vw;line-height: 1.8vw;}
         .unit-name span.name {font-size:1.5vw;top:4.5%;}
         .unit-name span.name_large {font-size:1.2vw;top:5.5%;}
         .unit-name span.rp {font-size:1.5vw;top:4.5%;}
-     };
+     }

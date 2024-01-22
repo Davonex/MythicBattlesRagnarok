@@ -11,6 +11,7 @@ class Unit {
      * @param {Object} Objet - Objet from the Units.json file (One Unit)
      */
     constructor(Objet) {
+        this._visibility = true
         this._id = Objet.id
         this._name = Objet.name
         this._rp = Objet.rp
@@ -24,65 +25,105 @@ class Unit {
         this._box = Objet.box
         //this._talents = [Objet?.talent1,Objet?.talent2,Objet?.talent3]
         this._class = []
-        Objet.class?.split(',').forEach ((item) => this._class.push(item) )
+        Objet.class?.split(',').forEach((item) => this._class.push(item))
         this._talents = []
-        if (typeof (Objet.talent1) !== 'undefined' ) { this.Talent = Objet.talent1}
-        if (typeof (Objet.talent2) !== 'undefined' ) { this.Talent = Objet.talent2}
-        if (typeof (Objet.talent3) !== 'undefined' ) { this.Talent = Objet.talent3}
+        if (typeof (Objet.talent1) !== 'undefined') { this.Talent = Objet.talent1 }
+        if (typeof (Objet.talent2) !== 'undefined') { this.Talent = Objet.talent2 }
+        if (typeof (Objet.talent3) !== 'undefined') { this.Talent = Objet.talent3 }
         //this._class = Objet.class
-        this._power =[]
-        if (typeof (Objet.power1) !== 'undefined' ) { 
-            this.Power = {"name":Objet.power1,"type":Objet.pt1,"cost":Objet.pc1} }
-        if (typeof (Objet.power2) !== 'undefined' ) { 
-            this.Power = {"name":Objet.power2,"type":Objet.pt2,"cost":Objet.pc2} }
-        if (typeof (Objet.power3) !== 'undefined' ) { 
-            this.Power = {"name":Objet.power3,"type":Objet.pt3,"cost":Objet.pc3} }        
+        this._power = []
+        if (typeof (Objet.power1) !== 'undefined') {
+            this.Power = { "name": Objet.power1, "type": Objet.pt1, "cost": Objet.pc1 }
+        }
+        if (typeof (Objet.power2) !== 'undefined') {
+            this.Power = { "name": Objet.power2, "type": Objet.pt2, "cost": Objet.pc2 }
+        }
+        if (typeof (Objet.power3) !== 'undefined') {
+            this.Power = { "name": Objet.power3, "type": Objet.pt3, "cost": Objet.pc3 }
+        }
+        const Cards = document.getElementById("Cards")
+        Cards.appendChild (this._AddCard ())
     }
-    
+
     /**
      *  @param {string} tal - One of talents of unit
      */
-    set Talent(tal) { this._talents.push(tal);}
+    set Talent(tal) { this._talents.push(tal); }
     /**
      * Set list power of unit 
      * @param {string} pow - One of powers of unit
      */
-    set Power(pow) { this._power.push(pow);}
+    set Power(pow) { this._power.push(pow); }
 
-  
     /**
-     * AddCard : Add Html code for this Unit
+     * Set list power of unit 
+     * @param {string} pow - One of powers of unit
      */
-    AddCard () {
-        const Cards = document.getElementById ("Cards")
+    set Visibility(BoolVal) {
+        this._visibility = BoolVal
+        if (this._visibility) {
+            this._HTMLCard.classList.remove("unit-visible") 
+        } else {
+            this._HTMLCard.classList.add("unit-visible")
+        }
+    }
 
-        this._HTMLCard =  this._CreateDivWithClass(["w3-col","m6","l4","w3-round","unit-"+this._type.toLowerCase()])
+    get Visibility() {
+        return this._visibility
+    }
+
+    get Type() {
+        return this._type
+    }
+
+    _isTroop (){
+        if (this._type === "Troops") { return true}  else {return false}
+    }
+
+    /**
+     * Private Method to add a card
+     * _AddCard : Add Html code for this Unit
+     */
+    _AddCard() {
+        this._HTMLCard = this._CreateDivWithClass(["w3-col", "m6", "l4", "w3-round", "unit-" + this._type.toLowerCase()])
         // Add class list 
         this._HTMLCard.title = this._name
         this._HTMLCard.id = this._id
         // Add Image part 
-            const ImagePart =  this._CreateDivWithClass(["w3-col","s6","m6","l6","w3-display-container"])
-            const ImageUnit = this._CreateImgWithClass(["unit-img","w3-bar-item"],"./assets/images/" + this._id + ".png")
+            const ImagePart = this._CreateDivWithClass(["w3-col", "s6", "m6", "l6", "w3-display-container"])
+            const ImageUnit = this._CreateImgWithClass(["unit-img", "w3-bar-item"], "./assets/images/" + this._id + ".png")
             ImagePart.appendChild(ImageUnit)
-            if (this._act !== 0) ImagePart.appendChild(this._AddIco("act",this._act,"left"))
+            if (this._act !== 0) ImagePart.appendChild(this._AddIco("act", this._act, "left"))
             ImagePart.appendChild(this._AddBox())
-            if (this._aow !== 0) ImagePart.appendChild(this._AddIco("aow",this._aow,"right"))
-            this._AddClass (ImagePart)
-            this._HTMLCard.appendChild(ImagePart) 
-            
+            if (this._aow !== 0) ImagePart.appendChild(this._AddIco("aow", this._aow, "right"))
+            this._AddClass(ImagePart)
+
+            ///this._AddName(ImagePart)
+
+            this._HTMLCard.appendChild(ImagePart)
+
         // Add Info Part 
-            const InfoPart =  this._CreateDivWithClass(["w3-col","s6","m6","l6","w3-display-container"])
-            // Add Name
-            //InfoPart.append(this._AddName(this._id))
-            this._AddName (InfoPart)
-            this._HTMLCard.append(InfoPart)
+        const InfoPart = this._CreateDivWithClass(["w3-col", "s6", "m6", "l6", "w3-display-container"])
+        if (this._isTroop()) {
+            const ImgInfo = this._CreateImgWithClass(["unit-img"], "./assets/images/" + this._type + "_c.png")
+            InfoPart.appendChild(ImgInfo)
+            this._AddChar(InfoPart)
+            
+            InfoPart.appendChild(this._AddIco("vitality", this._vitality, "left")) 
+
+        } else {
+        // Add Name
+        //InfoPart.append(this._AddName(this._id))
+            this._AddName(InfoPart)
             // Add Talents 
-            this._AddTalents (InfoPart)
+            this._AddTalents(InfoPart)
             // Char
-            this._AddChar (InfoPart)
+            this._AddChar(InfoPart)
             // Power
-            this._AddPower (InfoPart)
-        Cards.appendChild(this._HTMLCard)
+            this._AddPower(InfoPart)
+        }
+        this._HTMLCard.append(InfoPart)
+        return(this._HTMLCard)
 
     }
 
@@ -92,17 +133,17 @@ class Unit {
      * @returns 
      */
     _CreateDivWithClass(ClName = []) {
-        return this._CreateXXXWithClass ("div",ClName)
+        return this._CreateXXXWithClass("div", ClName)
     }
 
-        /**
+    /**
      * 
      * @param {string[]} ClName 
      * @returns 
      */
-        _CreateSpanWithClass(ClName = []) {
-            return this._CreateXXXWithClass ("span",ClName)
-        }
+    _CreateSpanWithClass(ClName = []) {
+        return this._CreateXXXWithClass("span", ClName)
+    }
 
 
     /**
@@ -110,9 +151,9 @@ class Unit {
      * @param {string[]} ClName 
      * @returns 
      */
-    _CreateXXXWithClass(tag,ClName = []) {
+    _CreateXXXWithClass(tag, ClName = []) {
         const HtmlElementTag = document.createElement(tag)
-        ClName.forEach((element,index) => {
+        ClName.forEach((element, index) => {
             HtmlElementTag.classList.add(element)
         })
         return HtmlElementTag
@@ -124,52 +165,54 @@ class Unit {
      * @param {string} Source 
      * @returns 
      */
-    _CreateImgWithClass(ClName = [],Source = "") {
-        const HtmlElementImg = document.createElement("img")
-        ClName.forEach((element,index) => {
-            HtmlElementImg.classList.add(element)
-        })
+    _CreateImgWithClass(ClName = [], Source = "") {
+        
+        const HtmlElementImg = this._CreateXXXWithClass("img", ClName)
         HtmlElementImg.src = Source
         return HtmlElementImg
     }
 
     /**
-     * Private Add Ico AOW and activation Card
+     * Private _AddIco
+     * Add ico AOW and activation Card
      * @param {string} ico 
      * @param {integer} nrb 
      * @returns element
      */
-    _AddIco (ico,nbr,where){
+    _AddIco(ico, nbr, where) {
         //console.log (ico,nbr)
-        const HTMLElementdiv = this._CreateDivWithClass(["w3-display-bottom"+where,"unit-" + ico])
-        const img = this._CreateImgWithClass([],"./assets/images/" + ico + "_" + nbr + ".png")
+        const HTMLElementdiv = this._CreateDivWithClass(["w3-display-bottom" + where, "unit-" + ico])
+
+        const img = this._CreateImgWithClass([], "./assets/images/" + ico + "_" + nbr + ".png")
         HTMLElementdiv.append(img)
         return HTMLElementdiv
     }
 
+    
+
     /**
-     * 
+     * Private _AddBox
      * @returns 
      */
     _AddBox() {
-        const HTMLElementdiv = this._CreateDivWithClass(["w3-display-bottommiddle","unit-box"])
+        const HTMLElementdiv = this._CreateDivWithClass(["w3-display-bottommiddle", "unit-box"])
         const HTMLElementspan = this._CreateSpanWithClass()
         HTMLElementspan.append(this._box.toUpperCase())
         HTMLElementdiv.append(HTMLElementspan)
         return HTMLElementdiv
     }
-    
-    
+
+
     /**
-     * Private add  name
+     * Private _AddName
      * @param {id} id 
      * @returns element
      */
-    _AddName (ParentEle) {
-        const div = this._CreateDivWithClass(["w3-row","unit-name"])
-        const img = this._CreateImgWithClass([],"./assets/images/"+ this._type +"_c.png")
+    _AddName(ParentEle) {
+        const div = this._CreateDivWithClass(["w3-row", "unit-name"])
+            const img = this._CreateImgWithClass([], "./assets/images/" + this._type + "_c.png")
             const span_name = document.createElement("span")
-            const cl  = this._name.length > 13 ? "name_large" : "name"
+            const cl = this._name.length > 13 ? "name_large" : "name"
             span_name.classList.add(cl)
             span_name.textContent = this._name
             div.append(span_name)
@@ -177,106 +220,118 @@ class Unit {
             span_rp.classList.add("rp")
             span_rp.textContent = this._rp
             div.append(span_rp)
-        div.append(img)
-        //div.append(div_txt)
+            div.append(img)
+            //div.app
+
         ParentEle.append(div)
     }
 
     /**
-     * _AddClass  
+     * Private _AddClass  
      * @param { HTMLElement} ParentEle 
      */
-    _AddClass (ParentEle) {
+    _AddClass(ParentEle) {
         //console.log (this._class.lenght)
-        this._class.forEach((element,index) => {
-            const img = document.createElement("img")    
+        this._class.forEach((element, index) => {
+            const img = document.createElement("img")
             img.src = "./assets/images/" + element + ".png"
-            img.classList.add("display-class-"+index)
+            img.classList.add("display-class-" + index)
             img.title = element
-            ParentEle.append(img)         
+            ParentEle.append(img)
         })
 
     }
 
+    /**
+     * Private _AddChar 
+     * @param {*} ParentEle 
+     */
+    _AddChar(ParentEle) {
 
-    _AddChar (ParentEle)
-    {
-        const div = document.createElement("div") 
-        div.classList.add("unit-car")
-        // Add Background tabe
-            const img = document.createElement("img")
-            img.src = "./assets/images/table.png"  
-            //img.src = "./assets/images/table_car.png"  
-            div.appendChild(img)  
-                //offence
-                const off = document.createElement("span")
-                off.classList.add("display-car","unit-off")
-                off.textContent = this._offence
-                div.appendChild(off)
-                //defence
-                const def = document.createElement("span")
-                def.classList.add("display-car","unit-def")
-                def.textContent = this._defence
-                div.appendChild(def)
-                 //range
-                 const ran = document.createElement("span")
-                 ran.classList.add("display-car","unit-ran")
-                 ran.textContent = this._range
-                 div.appendChild(ran)
-                //move
-                const mov = document.createElement("span")
-                mov.classList.add("display-car","unit-mov")
-                mov.textContent = this._range
-                div.appendChild(mov)
-                //vitality
-                const vit = document.createElement("span")
-                vit.classList.add("display-car","unit-vit")
-                vit.textContent = this._vitality
-                div.appendChild(vit)                
-            //<span class="display-car unit-off">10</span>
-        ParentEle.appendChild(div)
+       
+        if (this._isTroop()) {
+            Element = ParentEle             
+        } else {
+            // Add Background tabe
+            const DivElement = this._CreateDivWithClass(["unit-car"])
+            const img = this._CreateImgWithClass([],"./assets/images/table.png") 
+            DivElement.appendChild(img) 
+
+            const vit = this._CreateSpanWithClass(["display-car", "unit-vit"])
+            vit.textContent = this._vitality
+            DivElement.appendChild(vit)
+            Element = DivElement
+
+            ParentEle.appendChild(DivElement)
+        }
+        //offence
+        const off = this._CreateSpanWithClass(["display-car", "unit-off"])
+        off.textContent = this._offence
+        Element.appendChild(off)
+        //defence
+        const def = this._CreateSpanWithClass(["display-car", "unit-def"])
+        def.textContent = this._defence
+        Element.appendChild(def)
+        //range
+        const ran =  this._CreateSpanWithClass(["display-car", "unit-ran"])
+        ran.textContent = this._range
+        Element.appendChild(ran)
+        //move
+        const mov = this._CreateSpanWithClass(["display-car", "unit-mov"])
+        mov.textContent = this._range
+        Element.appendChild(mov)
+        //vitality
+
+
+        //<span class="display-car unit-off">10</span>
+
+
+        
     }
 
-    _AddPower (ParentEle){
-        const div = document.createElement("div") 
-        div.classList.add("unit-powers")   
-        this._power.forEach((obj,index) => {
+    /**
+     * Private _AddPower
+     * @param {*} ParentEle 
+     */
+    _AddPower(ParentEle) {
+        const div = document.createElement("div")
+        div.classList.add("unit-powers")
+        this._power.forEach((obj, index) => {
 
             const divUP = this._CreateDivWithClass(["unit-power"])
             let color = index % 2 === 1 ? "white" : "black"
-            const img = this._CreateImgWithClass(["unit-power-type"],"./assets/images/" + obj.type + "_" + color +".png")
+            const img = this._CreateImgWithClass(["unit-power-type"], "./assets/images/" + obj.type + "_" + color + ".png")
             img.title = obj.type
-            divUP.appendChild(img) 
+            divUP.appendChild(img)
 
             const span = document.createElement("span")
-                const cl  = obj.name.length > 18 ? "power-name-large" : "power-name"
-                span.classList.add (cl)
-                span.textContent = obj.name
-                divUP.appendChild(span) 
-            for (let i = 0; i < obj.cost ; i++) {
-                    const imgAOW = document.createElement("img")
-                    imgAOW.classList.add("unit-power-aow")
-                    imgAOW.src = "./assets/images/aow.png"  
-                    divUP.appendChild(imgAOW)
-                  }
-            div.appendChild(divUP)     
+            const cl = obj.name.length > 18 ? "power-name-large" : "power-name"
+            span.classList.add(cl)
+            span.textContent = obj.name
+            divUP.appendChild(span)
+            for (let i = 0; i < obj.cost; i++) {
+                const imgAOW = document.createElement("img")
+                imgAOW.classList.add("unit-power-aow")
+                imgAOW.src = "./assets/images/aow.png"
+                divUP.appendChild(imgAOW)
+            }
+            div.appendChild(divUP)
         })
         ParentEle.appendChild(div)
     }
 
 
     /**
-     * 
+     * Private _AddTalents
      * @param { HTMLElement} ParentEle 
      */
-    _AddTalents (ParentEle)
-    {
+    _AddTalents(ParentEle) {
         //console.log (tal)
-        const div = document.createElement("div") 
+        const div = document.createElement("div")
         div.classList.add("unit-talents")
         this._talents.forEach((el) => {
             const p = document.createElement("span")
-            p.textContent = el 
+            p.textContent = el
             p.className = "talent"
             div.appendChild(p)
         })
@@ -286,30 +341,31 @@ class Unit {
 }
 
 
-
+/**
+ * Class manage all unit 
+ * @class Units
+ * @classdesc This is a description of the MyClass class.
+ */
 
 class Units {
     /* construtor */
-    constructor () {
+    constructor() {
         this.CurentUnit = 1;
-        this._list = {}; 
-    }  
-
-    Add (obj) {
-        this._list[obj._id] = obj
-        //this.AddMenu(obj)
-        // if ( 
-        //      obj._type === "Titans" 
-        //      || obj._type === "Gods" 
-        //      || obj._type === "Monsters" 
-        //      ||  obj._type === "Heroes"
-        //     ) {
-            obj.AddCard () 
-            console.log ("add obj", obj)
-        // }
-        // console.log ("add obj", obj)
+        this._list = {};
     }
-    
+
+    Add(obj) {
+        this._list[obj._id] = obj
+        //obj.AddCard()
+    }
+
+    /**
+     * get List of unity
+     */
+    get ListUnits() {
+        return this._list
+    }
+
 }
 
 
@@ -322,38 +378,71 @@ fetch("http://127.0.0.1:5500/assets/units.json")
     .catch(error => console.log(error))
 
 
-function CreateListe (units) {
+function CreateListe(units) {
     /**
      * Creation du select et de la list de unit 
      */
-    
-    for (const property in units) { 
-        if ( 
-        //    units[property].name === "ANGRBODA" 
-        //    || units[property].name === "BALDR"
-        //    || units[property].name === "FRIGG"
-        //    || units[property].name === "JORMUNGAND"
-           
-                units[property].type === "Titans" 
-                || units[property].type === "Gods" 
-                || units[property].type === "Monsters" 
-                ||  units[property].type === "Heroes"
-           ) {           
-                let obj = new Unit(units[property]);
-                Rag.Add(obj);
-           }
+
+    for (const property in units) {
+        if (
+            units[property].name === "ANGRBODA" 
+            //    || units[property].name === "BALDR"
+            //    || units[property].name === "FRIGG"
+            //    || units[property].name === "JORMUNGAND"
+
+           // units[property].type === "Titans"
+           // || units[property].type === "Gods"
+           // || units[property].type === "Monsters"
+            //|| units[property].type === "Heroes"
+            //||
+            || units[property].type === "Troops"
+        ) {
+            let obj = new Unit(units[property]);
+            Rag.Add(obj);
+            console.log (obj)
+        }
     }
     console.log("Fetch load succed")
 }
 
-const UnitLinks = document.querySelectorAll("div#type-select a").forEach(a => {
-    a.addEventListener('click',(e)=>{
-            console.log (e.currentTarget)
-            //this.CurentUnit = PointerEvent.currentTarget.attributes["value"].value
-            //console.log (PointerEvent.currentTarget.attributes["value"].value)
-            //this.ShowCurrent ()
-        })
+// const UnitLinks = document.querySelectorAll("div#type-select a").forEach(a => {
+//     a.addEventListener('click', (e) => {
+
+//         const Filter = e.currentTarget.getAttribute("unit")
+//         //debugger
+//         console.log (Filter)
+//         for(let i in Rag.ListUnits){
+//             //debugger
+//             if (Rag.ListUnits[i].Type === Filter || Filter === "All") 
+//                 {Rag.ListUnits[i].Visibility = true}
+//             else { Rag.ListUnits[i].Visibility = false }
+//         }
+//     });
+
+// })
+
+
+
+document.querySelectorAll("#cb-unit-type input").forEach(input => {
+    input.addEventListener('change', (e) => {
+        filter = e.currentTarget.getAttribute("value")
+        for(let i in Rag.ListUnits){
+            //debugger
+            if (Rag.ListUnits[i].Type === filter) { Rag.ListUnits[i].Visibility = e.currentTarget.checked}    
+        }
+        //console.log (e.currentTarget.getAttribute("value"))
+        //var _val = e.is(':checked') ? 'checked' : 'unchecked';
+        //debugger
+        console.log(filter + " " + e.currentTarget.checked );
+
+
+    })
 })
+
+
+
+//cb-unit-type
+//})
 
 
 // const UnitLinks = document.document.querySelectorAll('a.unit').forEach(a => {
