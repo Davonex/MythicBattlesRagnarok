@@ -33,13 +33,16 @@ class Unit {
         //this._class = Objet.class
         this._power = []
         if (typeof (Objet.power1) !== 'undefined') {
-            this.Power = { "name": Objet.power1, "type": Objet.pt1, "cost": Objet.pc1 }
+            this.Power = { "name": Objet.power1, "type": Objet.pt1, "cost": Objet.pc1,
+            "effect": Objet.pe1 }
         }
         if (typeof (Objet.power2) !== 'undefined') {
-            this.Power = { "name": Objet.power2, "type": Objet.pt2, "cost": Objet.pc2 }
+            this.Power = { "name": Objet.power2, "type": Objet.pt2, "cost": Objet.pc2,
+            "effect": Objet.pe2  }
         }
         if (typeof (Objet.power3) !== 'undefined') {
-            this.Power = { "name": Objet.power3, "type": Objet.pt3, "cost": Objet.pc3 }
+            this.Power = { "name": Objet.power3, "type": Objet.pt3, "cost": Objet.pc3,
+            "effect": Objet.pe3  }
         }
         const Cards = document.getElementById("Cards")
         Cards.appendChild (this._AddCard ())
@@ -75,7 +78,10 @@ class Unit {
     get Type() {
         return this._type
     }
-
+    /**
+     * 
+     * @returns {boolean}
+     */
     _isTroop (){
         if (this._type === "Troops") { return true}  else {return false}
     }
@@ -85,9 +91,12 @@ class Unit {
      * _AddCard : Add Html code for this Unit
      */
     _AddCard() {
-        this._HTMLCard = this._CreateDivWithClass(["w3-col", "m6", "l4", "w3-round", "unit-" + this._type.toLowerCase()])
-        // Add class list 
-        this._HTMLCard.title = this._name
+        
+        this._HTMLCard = this._CreateDivWithClass(["w3-col", "m6", "l4","w3-display-container","w3-round", "unit-" + this._type.toLowerCase()])
+        //this._HTMLCard = this._CreateDivWithClass(["w3-display-container","w3-round", "unit-" + this._type.toLowerCase()])
+        //toto.appendChild (this._HTMLCard)
+
+        this._HTMLCard.title = this._name,
         this._HTMLCard.id = this._id
         // Add Image part 
             const ImagePart = this._CreateDivWithClass(["w3-col", "s6", "m6", "l6", "w3-display-container"])
@@ -107,8 +116,7 @@ class Unit {
         if (this._isTroop()) {
             const ImgInfo = this._CreateImgWithClass(["unit-img"], "./assets/images/" + this._type + "_c.png")
             InfoPart.appendChild(ImgInfo)
-            this._AddChar(InfoPart)
-            
+
             InfoPart.appendChild(this._AddIco("vitality", this._vitality, "left")) 
 
         } else {
@@ -117,11 +125,12 @@ class Unit {
             this._AddName(InfoPart)
             // Add Talents 
             this._AddTalents(InfoPart)
-            // Char
-            this._AddChar(InfoPart)
             // Power
             this._AddPower(InfoPart)
         }
+        // Char
+        this._AddChar(InfoPart)
+
         this._HTMLCard.append(InfoPart)
         return(this._HTMLCard)
 
