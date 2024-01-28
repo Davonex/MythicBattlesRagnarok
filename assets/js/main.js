@@ -92,9 +92,10 @@ class Unit {
      */
     _AddCard() {
         
-        this._HTMLCard = this._CreateDivWithClass(["w3-col", "m6", "l4","w3-display-container","w3-round", "unit-" + this._type.toLowerCase()])
+        const HTMLContainer = this._CreateDivWithClass(["w3-col", "m6", "l4" ,"unit-card"])
+        this._HTMLCard = this._CreateDivWithClass(["unit-" + this._type.toLowerCase()])
         //this._HTMLCard = this._CreateDivWithClass(["w3-display-container","w3-round", "unit-" + this._type.toLowerCase()])
-        //toto.appendChild (this._HTMLCard)
+        HTMLContainer.appendChild (this._HTMLCard)
 
         this._HTMLCard.title = this._name,
         this._HTMLCard.id = this._id
@@ -114,10 +115,14 @@ class Unit {
         // Add Info Part 
         const InfoPart = this._CreateDivWithClass(["w3-col", "s6", "m6", "l6", "w3-display-container"])
         if (this._isTroop()) {
+            this._AddTroopName(ImagePart)
             const ImgInfo = this._CreateImgWithClass(["unit-img"], "./assets/images/" + this._type + "_c.png")
             InfoPart.appendChild(ImgInfo)
 
             InfoPart.appendChild(this._AddIco("vitality", this._vitality, "left")) 
+
+            this._AddChar(InfoPart)
+
 
         } else {
         // Add Name
@@ -125,15 +130,17 @@ class Unit {
             this._AddName(InfoPart)
             // Add Talents 
             this._AddTalents(InfoPart)
+            // Add char
+            this._AddChar(InfoPart)
             // Power
             this._AddPower(InfoPart)
         }
         // Char
-        this._AddChar(InfoPart)
+        
 
         this._HTMLCard.append(InfoPart)
-        return(this._HTMLCard)
-
+        //return(this._HTMLCard)
+        return (HTMLContainer)
     }
 
     /**
@@ -210,6 +217,21 @@ class Unit {
         HTMLElementdiv.append(HTMLElementspan)
         return HTMLElementdiv
     }
+
+       /**
+     * Private _AddTroopName
+     * @param {HtmlElement}  
+     * @returns element
+     */
+       _AddTroopName(ParentEle) {
+        const DivContainerName = this._CreateDivWithClass([ "unit-troopname"])
+            const span_name = document.createElement("span")
+            const cl = this._name.length > 13 ? "name_large" : "name"
+            span_name.classList.add(cl)
+            span_name.textContent = this._name
+            DivContainerName.append(span_name)
+        ParentEle.append(DivContainerName)
+       }
 
 
     /**
@@ -394,7 +416,8 @@ function CreateListe(units) {
 
     for (const property in units) {
         if (
-            units[property].name === "ANGRBODA" 
+            true
+            // units[property].name === "ANGRBODA" 
             //    || units[property].name === "BALDR"
             //    || units[property].name === "FRIGG"
             //    || units[property].name === "JORMUNGAND"
@@ -404,7 +427,7 @@ function CreateListe(units) {
            // || units[property].type === "Monsters"
             //|| units[property].type === "Heroes"
             //||
-            || units[property].type === "Troops"
+            // || units[property].type === "Troops"
         ) {
             let obj = new Unit(units[property]);
             Rag.Add(obj);
