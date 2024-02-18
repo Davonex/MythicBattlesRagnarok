@@ -1,0 +1,160 @@
+[
+    {
+        "id": 1,
+        "name": "Archery",
+        "nom": "tir à l’arc",
+        "effect": "during the calculation of the effective\noffence value of a range 1+ normal attack, the unit\nwith the Archer talent gains +1 offence.",
+        "effet": "lors du calcul de la valeur effective de combat d’une attaque normale à portée 1+, l’unité avec Tir à l’arc gagne +1 en combat. ",
+        "assaultEffect": "Assault"
+    },
+    {
+        "id": 2,
+        "name": "Berserk",
+        "nom": "Berserk",
+        "effect": "the unit can use its 2 simple turn actions\nto perform 2 normal attack actions of range 0,\nunmodifiable by any power or any talent. At the\nend of the second attack action, the unit suffers\n1 automatic wound.",
+        "effet": "l’unité peut utiliser ses 2 actions simples du tour pour effectuer 2 actions d’attaque normale de portée 0, sans modificateur possible ni pouvoir ou talent. A la fin de la seconde action d’attaque, l’unité subit 1 blessure. "
+    },
+    {
+        "id": 3,
+        "name": "Block",
+        "nom": "Bloqueur",
+        "effect": "an enemy unit that is in the area of a\nblocker unit cannot carry out a walk, run, or ascend\naction. An enemy unit cannot claim a divine stone\nthat is in the area of a unit with the Block talent,\nbut may still absorb a divine stone if that blocked\nunit is a divinity.\nA unit with the Block talent ignores these effects.",
+        "effet": "Une unité ennemie qui se trouve dans la zone d’une unité avec Bloqueur ne peut pas effectuer de marche, de course ou d'ascension. Une unité ennemie ne peut pas collecter de pierre divine qui se trouve dans la zone d’une unité avec Bloqueur, mais peut toujours en absorber une si elle est une divinité. Une unité avec le talent Bloqueur ignore ces effets"
+    },
+    {
+        "id": 4,
+        "name": "Bolster",
+        "nom": "Moral des Troupes",
+        "effect": "during the calculation of the effective offence\nand defence values of a normal or area attack, the allied\ntroop units in the same area as the unit with the Bolster\ntalent gain +1 offence and +1 defence. ",
+        "effet": "lors du calcul des valeurs effectives de combat et de défense d’une attaque normale ou de zone, les autres unités de troupes alliées dans la même zone que l’unité avec Moral des troupes gagnent +1 en combat et +1 en défense.",
+        "assaultEffect": "Assault\nDefence"
+    },
+    {
+        "id": 5,
+        "name": "Climb",
+        "nom": "Escalade",
+        "effect": "a unit with the Climb talent can walk into\nrock or cliff areas. The unit may cross escarpment\nboundaries. In a rock area, the unit gains +1 defence\nagainst units who do not have the Climb talent.",
+        "effet": "une unité avec Escalade peut effectuer une marche vers des zones de type rocher ou falaise. Elle est autorisée à franchir les frontières de type escarpement. Sur un rocher, l’unité gagne +1 en défense contre les unités sans Escalade.",
+        "assaultEffect": "Defence"
+    },
+    {
+        "id": 6,
+        "name": "Close Combat",
+        "nom": "Corps-à-corps",
+        "effect": "During the calculation of the effective offence value of a range 0 normal attack, the unit with the Close Combat talent gains +1 offence until the end of their current activation.",
+        "effet": "lors du calcul de la valeur effective de combat d’une attaque normale à portée 0, l’unité avec Corps-à-corps gagne +1 en combat jusqu’à la fin de son activation.",
+        "assaultEffect": "Assault"
+    },
+    {
+        "id": 7,
+        "name": "Close Protection ",
+        "nom": "Protection Rapproché",
+        "effect": "during the calculation of the effective defence value of a normal or area attack, if another allied unit is in the same area, the unit with the Close Protection talent gains +1 defence. ",
+        "effet": " lors du calcul de la valeur effective de défense\nd’une attaque normale ou de zone, si une autre unité\nalliée se trouve dans la même zone, l’unité avec\nProtection rapprochée gagne +1 en défense."
+    },
+    {
+        "id": 8,
+        "name": "Force Of Nature",
+        "nom": "Force de la Nature",
+        "effect": "before selecting the target of a normal or\nan area attack, if the unit with the Force of Nature\ntalent is in an area with at least one 3D element,\nthey can remove one of these elements from the\nboard to gain +1 offence and +1 range until the end\nof their current activation.",
+        "effet": "avant le choix de la cible d’une attaque normale ou de zone, si l’unité avec Force de la Nature se trouve dans une zone avec au moins un élément 3D, elle peut en retirer un pour gagner +1 en combat et +1 en portée jusqu’à la fin de son activation. "
+    },
+    {
+        "id": 9,
+        "name": "Gem Collector",
+        "nom": "Collecteur de Gemmes",
+        "effect": "during the activation of a unit with the\nGem Collector talent, this unit can carry out a claim\naction from any visible area in their surroundings.",
+        "effet": "lors de son activation, l’unité avec Collecteur de gemmes peut effectuer une collecte dans une zone visible de ses environs. "
+    },
+    {
+        "id": 10,
+        "name": "Gods Slayer",
+        "nom": "Tueur de Dieu",
+        "effect": "Slayer is always linked to a unit type, such as «Monster Slayer». During the first assault, before discarding blank results, the unit may re-roll up to 2 dice against a target of the unit type  corresponding to its Slayer talent.",
+        "effet": " Lors du premier assaut, avant de défausser les résultats vierges, l’unité peut relancer jusqu’à 2 dés face à une cible du type Dieu"
+    },
+    {
+        "id": 11,
+        "name": "Guard",
+        "nom": "Gardien",
+        "effect": "after the choice of the target of a normal or an area attack by an enemy, if the unit with the Guard talent is in the same area as the targeted allied unit, they become the new target.\nThis talent cannot be used against a retaliation or against terrain effects.",
+        "effet": "après le choix de la cible d’une attaque normale ou de zone par un adversaire, si l’unité avec Gardien se trouve dans la même zone que l’unité alliée ciblée, elle devient la nouvelle cible.\nCe talent ne peut pas être utilisé contre une contreattaque ni contre les effets de terrain. "
+    },
+    {
+        "id": 12,
+        "name": "Heroes Slayer",
+        "nom": "Tueur de Hero",
+        "effect": "Slayer is always linked to a unit type, such as «Monster Slayer». During the first assault, before discarding blank results, the unit may re-roll up to 2 dice against a target of the unit type  corresponding to its Slayer talent.",
+        "effet": "Tueur est toujours lié à un type d’unité, par exemple Tueur de Monstre. Lors du premier assaut, avant de défausser les résultats vierges, l’unité peut relancer jusqu’à 2 dés face à une cible du type correspondant à ce talent."
+    },
+    {
+        "id": 13,
+        "name": "Initiative",
+        "nom": "Initiative",
+        "effect": "after the choice of the target of a range 0 normal attack, if the target is the unit with the Initiative talent, they can retaliate before the original attack is resolved.\nAfter the retaliation, if the attacker is further away from the target than their range, the action ends. If not, the attacker carries out the attack without the target retaliating again.\nIf both the attacker and the target have this talent, the effect is ignored.",
+        "effet": "après le choix de la cible d’une attaque normale à portée 0, si l’unité avec Initiative est ciblée, elle effectue sa contre-attaque avant la résolution de l’attaque.\nAprès la contre-attaque, si l’attaquant est à une distance de la cible supérieure à sa portée, l’action se termine. Sinon, l’attaquant réalise l’attaque sans que la  cible ne puisse contre-attaquer à nouveau.\nSi l’attaquant et la cible ont tous les deux ce talent, ce dernier est ignoré. "
+    },
+    {
+        "id": 14,
+        "name": "Leader",
+        "nom": "Leader",
+        "effect": "at the end of their activation phase, the active player can activate a visible allied troop unit in their surroundings without spending an AoW card. If the active player or their teammate doesn’t have the activation card in their hand, they can take it from the unit owners deck, show it, play it, discard it in the unit owners discard pile, and reshuffle the deck. if the unit chosen for this new  activation does not belong to the active player, the player whose unit is using the Leader talent takes control of that unit until the end of their current turn. This activation counts in the activation  number limitation.",
+        "effet": "à la fin de sa phase d'activation, le joueur actif d'une unité avec le talent Leader choisit une troupe alliée dans ses environs, qu'il active.\nIl prend le contrôle de l'unité allié si elle appartient à l'autre membre de son camp. Cette activation compte dans le nombre maximum d'activations du joueur actif. L'activation de l'unité choisie ne nécessite pas de dépenser une carte Art de la Guerre. \nAu lieu d'utiliser une carte d'activation de l'unité dans sa main, le propriétaire de l'unité alliée peut aller chercher la carte d'activation de cette unité dans sa pioche, la montrer à ses adversaires, l'utiliser immédiatement et mélanger la  pioche d'où provient la carte. Il place ensuite la carte jouée dans sa défausse."
+    },
+    {
+        "id": 15,
+        "name": "Mighty Throw",
+        "nom": "Projection ",
+        "effect": "Before the second assault of a normal or area attack, a unit with the Mighty Throw talent can move the attack targeted unit one area, if there are enough blank results generated during the first assault die roll to discard.\n- 1 to throw a troop or a hero unit,\n-  2 to throw a monster or a god unit,\n-  3 to throw a titan unit.\nThe unit is thrown IF it is able to enter a destination\narea, if the area is not full, and doesn't cross a\nboundary the unit is unable to cross, or enter a\nterrain type the unit cannot enter.\nIf thrown, the targeted unit immediately drops any\nclaimed divine stone.\nAfter having been thrown, the attack is then resolved\nas normal even if the targeted unit is no longer at a\ndistance less than or equal to the attacker’s range. If\nthe defender is no longer at range 0 from the attacker,\nthey cannot retaliate",
+        "effet": "Avant le second assaut d'une attaque normale ou de zone, une unité avec Projection peut déplacer d'une zone la cible de l'attaque si le nombre de résultats vierges obtenu au premier assaut est suffisant :\n■ 1 pour une unité de troupes ou de héros,\n■ 2 pour une unité de monstre ou de dieu,\n■ 3 pour une unité de titan.\nL'unité est projetée SI elle est capable d'entrer dans la zone désignée (ni dans une zone saturée, ni ne passe à travers une frontière qu'elle ne pourrait franchir, ni n'entre dans un terrain où elle ne peut pénétrer).\nSi elle est projetée, la cible lâche immédiatement toute pierre divine collectée. Après avoir déplacé l'unité ciblée, la résolution de l'attaque se poursuit normalement même si l'unité ciblée n'est plus à une distance inférieure ou égale à la portée de l'attaquant. Si la cible n'est plus à portée 0 de l'attaquant, elle ne peut pas contre-attaquer "
+    },
+    {
+        "id": 16,
+        "name": "Mobility",
+        "nom": "Mobilité",
+        "effect": "a unit with the Mobility talent can walk even after having carried out an attack.",
+        "effet": "une unité avec Mobilité peut effectuer une marche même après avoir effectué une attaque"
+    },
+    {
+        "id": 17,
+        "name": "Monster Slayer",
+        "nom": "Tueur de Monstre",
+        "effect": "Slayer is always linked to a unit type, such as «Monster Slayer». During the first assault, before discarding blank results, the unit may re-roll up to 2 dice against a target of the unit type  corresponding to its Slayer talent.",
+        "effet": "Tueur de Monstre. Lors du premier assaut, avant de défausser les résultats vierges, l’unité peut relancer jusqu’à 2 dés face à une cible du type correspondant à ce talent."
+    },
+    {
+        "id": 18,
+        "name": "Scout",
+        "nom": "Eclaireur",
+        "effect": "the unit can deploy without cost during the table setup step, as if it were a troop unit.",
+        "effet": "l’unité peut se déployer gratuitement lors de l’étape « préparer la table », comme si elle était une troupe."
+    },
+    {
+        "id": 19,
+        "name": "Sneak Attack",
+        "nom": "Attaque sournoise",
+        "effect": "during the calculation of the effective\noffence value of a range 0 normal attack, if another\nallied unit is in the same area, the unit with Sneak\nAttack gains +1 offence until the end of their current\nactivation.",
+        "effet": "lors du calcul de la valeur effective de combat d’une attaque normale de portée 0, si une autre unité alliée se trouve dans la même zone que l’attaquant, l’unité avec Attaque sournoise gagne +1 en combat jusqu’à la fin de  son activation."
+    },
+    {
+        "id": 20,
+        "name": "Terror",
+        "nom": "Terreur",
+        "effect": "an attacking unit performing a range 0\nattack agains a unit with the Terror talents suffers -1\nin offence.",
+        "effet": "l’unité attaquant à portée 0 une unité avec Terreur subit -1 en combat."
+    },
+    {
+        "id": 21,
+        "name": "Torment",
+        "nom": "Harcèlement",
+        "effect": "during the calculation of the effective defence value of a range 0 normal attack carried out by a unit with the Torment talent, the targeted unit suffers -1 defence until the end of the attack.",
+        "effet": "Lors du calcul de la valeur effective de défense d’une attaque normale à portée 0 effectuée par l’unité avec Harcèlement, l’unité ciblée subit -1 en défense jusqu’à la fin de l’attaque"
+    },
+    {
+        "id": 22,
+        "name": "Troops Slayer",
+        "nom": "Tueur de Toupes",
+        "effect": "Slayer is always linked to a unit type, such as «Monster Slayer». During the first assault, before discarding blank results, the unit may re-roll up to 2 dice against a target of the unit type  corresponding to its Slayer talent.",
+        "effet": "Tueur est toujours lié à un type d’unité, par exemple Tueur de Monstre. Lors du premier assaut, avant de défausser les résultats vierges, l’unité peut relancer jusqu’à 2 dés face à une cible du type correspondant à ce talent."
+    }
+]

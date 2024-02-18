@@ -1,4 +1,144 @@
+/**
+ * 
+ * 
+ */
+class ObjetLists {
+    constructor() {
+        this._talents = {};
+        this._type = {}
+        this._type[3] = {"name" : "Titans", "effect":"" }
+        this._type[0] = {"name" : "Gods", "effect":"" }
+        this._type[2] = {"name" : "Monsters", "effect":"" }
+        this._type[1] = {"name" : "Heroes", "effect":"" }
+        this._type[4] = {"name" : "Troops", "effect":"" }
+        this.AddMenu (this._type,"Type")
+        this._filter=[]
+    }  
 
+    AddAllTalents (Obj) {
+        for (const property in Obj) {
+            //console.log (Obj[property])
+            this._talents[Obj[property].id] =  {
+                 "name": Obj[property].nom,
+                 "effect": Obj[property].effet    
+            }
+        }
+        //console.log (this._list)
+        this.AddMenu(this._talents,"Talent")
+    } 
+
+    TalentName(id) { return this._talents[id].name }
+
+    TalentEffect(id) {return this._talents[id].effect}
+
+    AddMenu (Liste,MenuType) {
+        // id ="cb-unit-talent"
+        const MenuBar = document.getElementById("menu-bar")
+
+        const OneMenudiv = document.createElement("div")
+            OneMenudiv.classList.add("w3-dropdown-hover")
+            MenuBar.appendChild (OneMenudiv)
+
+        const Button = document.createElement("div")
+            Button.classList.add("w3-button")
+            Button.textContent = MenuType
+            OneMenudiv.appendChild (Button)
+        //Button.id = MenuType
+        const IconDown = document.createElement("i")
+            IconDown.classList.add("fa","fa-caret-down")
+            Button.appendChild (IconDown)
+
+        const Form = document.createElement("form")
+            Form.classList.add("w3-dropdown-content","w3-bar-block","w3-card-4")
+            OneMenudiv.appendChild (Form)
+        //"w3-dropdown-hover"
+        //const Form = document.getElementById(MenuType)
+
+
+
+        // loop to add all element checkbox
+        for (const id in Liste) {
+            const HtmlDivButton = document.createElement("div")
+                HtmlDivButton.classList.add("w3-button","bar-item")
+                    const checkbox = document.createElement("input")
+                    checkbox.type = "checkbox";
+                    checkbox.value = Liste[id].name
+                    checkbox.id = MenuType +"_"+id
+                    checkbox.checked = true
+                    HtmlDivButton.appendChild (checkbox)
+                    const label = document.createElement("label")
+                        const tn = document.createTextNode(Liste[id].name)
+                        label.appendChild (tn)
+                    label.htmlFor=MenuType +"_"+id
+                    HtmlDivButton.appendChild (label)
+            Form.appendChild (HtmlDivButton)  
+            
+            checkbox.addEventListener('change', (e) => {
+                // console.log (
+                //         e.currentTarget.getAttribute("value") + " : "
+                //         + "\nField : " + e.currentTarget.id.split('_')[0]
+                //         + "\nValue : "  +  e.currentTarget.id.split('_')[1]
+                //         + "\n =>"  +  e.currentTarget.checked)   
+                    const extract = e.currentTarget.id.split('_')
+                   this._Changefilter (extract[0],extract[1],e.currentTarget.checked) 
+
+            })
+        }
+    }
+    /**
+     * 
+     * @param {*} field 
+     * @param {*} value 
+     * @param {*} BoolVal 
+     */
+    _Changefilter (field,value,BoolVal){
+        if (! BoolVal)  {
+            // On doit cacher donc on ajoute le filtre
+            this._filter.push ({"field":field , "value":value})
+        } else {
+        // on doit Effacer le liftre si il existe 
+        this._filter.filter(function (rule,index,arr) {
+                    if (rule.field == field && rule.value == value) 
+                    {
+                        arr.splice(index, 1);
+                        return true; // on efface
+
+                    }
+                } );
+        }
+        this._Applyfilter ()
+        //console.log ( this._filter)
+    }
+    /**
+     * 
+     */
+    _Applyfilter ()
+    {
+        for(let IdUnit in Rag.ListUnits){
+            let IsVisible = true
+            for (let IdRule in this._filter) {
+                if ( this._CheckRule (this._filter[IdRule],Rag.ListUnits[IdUnit]) )
+                {
+                    IsVisible = false
+                    break
+                }
+            }
+
+            Rag.ListUnits[IdUnit].Visibility = IsVisible
+        } 
+    }
+
+    _CheckRule (OneRule,OneUnit)
+    {
+        const FunctionIs = "Is" + OneRule.field
+        if ( OneUnit[FunctionIs](OneRule.value) )
+          {
+            return true
+          }  else { return false }
+    }
+
+
+}
 
 
 /**
@@ -11,10 +151,10 @@ class Unit {
      * @param {Object} Objet - Objet from the Units.json file (One Unit)
      */
     constructor(Objet) {
-        this._visibility = true
         this._id = Objet.id
         this._name = Objet.name
         this._rp = Objet.rp
+        this._idtype = Objet.idtype
         this._type = Objet.type
         this._offence = Objet.off
         this._defence = Objet.def
@@ -27,9 +167,9 @@ class Unit {
         this._class = []
         Objet.class?.split(',').forEach((item) => this._class.push(item))
         this._talents = []
-        if (typeof (Objet.talent1) !== 'undefined') { this.Talent = Objet.talent1 }
-        if (typeof (Objet.talent2) !== 'undefined') { this.Talent = Objet.talent2 }
-        if (typeof (Objet.talent3) !== 'undefined') { this.Talent = Objet.talent3 }
+            if (typeof (Objet.talent1) !== 'undefined') { this.Talent = Objet.idt1 }
+            if (typeof (Objet.talent2) !== 'undefined') { this.Talent = Objet.idt2 }
+            if (typeof (Objet.talent3) !== 'undefined') { this.Talent = Objet.idt3 }
         //this._class = Objet.class
         this._power = []
         if (typeof (Objet.power1) !== 'undefined') {
@@ -46,6 +186,9 @@ class Unit {
         }
         const Cards = document.getElementById("Cards")
         Cards.appendChild (this._AddCard ())
+        /// Manage filter
+        //this._filter = {} 
+        //this.Visibility = document.getElementById("cb-"+this._type.toLowerCase()).checked
     }
 
     /**
@@ -65,9 +208,9 @@ class Unit {
     set Visibility(BoolVal) {
         this._visibility = BoolVal
         if (this._visibility) {
-            this._HTMLCard.classList.remove("unit-visible") 
+            this._HTMLContainer.classList.remove("unit-visible") 
         } else {
-            this._HTMLCard.classList.add("unit-visible")
+            this._HTMLContainer.classList.add("unit-visible")
         }
     }
 
@@ -75,9 +218,29 @@ class Unit {
         return this._visibility
     }
 
-    get Type() {
-        return this._type
+    get Type() {return this._type}
+    get Name() {return this._name}
+
+    /**
+     * 
+     * @param {*} IdTalent 
+     * @returns 
+     */
+    IsTalent ( IdTalent) {
+        if (this._talents.find((El) => El ==  IdTalent) == IdTalent)
+        { return true}
+        else
+         {return false}
     }
+    /**
+     * 
+     * @param {*} IdType 
+     * @returns 
+     */
+    IsType (IdType) {
+       return (this._idtype == IdType)
+    }
+
     /**
      * 
      * @returns {boolean}
@@ -92,10 +255,10 @@ class Unit {
      */
     _AddCard() {
         
-        const HTMLContainer = this._CreateDivWithClass(["w3-col", "m6", "l4" ,"unit-card"])
-        this._HTMLCard = this._CreateDivWithClass(["unit-" + this._type.toLowerCase()])
+        this._HTMLContainer = this._CreateDivWithClass(["w3-col", "m6", "l4" ,"unit-card"])
+        this._HTMLCard = this._CreateDivWithClass(["units","unit-" + this._type.toLowerCase()])
         //this._HTMLCard = this._CreateDivWithClass(["w3-display-container","w3-round", "unit-" + this._type.toLowerCase()])
-        HTMLContainer.appendChild (this._HTMLCard)
+        this._HTMLContainer.appendChild (this._HTMLCard)
 
         this._HTMLCard.title = this._name,
         this._HTMLCard.id = this._id
@@ -140,7 +303,7 @@ class Unit {
 
         this._HTMLCard.append(InfoPart)
         //return(this._HTMLCard)
-        return (HTMLContainer)
+        return (this._HTMLContainer)
     }
 
     /**
@@ -310,16 +473,19 @@ class Unit {
         //move
         const mov = this._CreateSpanWithClass(["display-car", "unit-mov"])
         mov.textContent = this._range
-        Element.appendChild(mov)
-        //vitality
-
-
-        //<span class="display-car unit-off">10</span>
-
-
-        
+        Element.appendChild(mov)  
     }
 
+    /**
+     * Private _AddPower
+     * @param {*} ParentEle 
+     */
+    _AddTroopPower(ParentEle) {
+        const div = document.createElement("div")
+        div.classList.add("unit-trooppowers")   
+
+        ParentEle.appendChild(div)
+    }
     /**
      * Private _AddPower
      * @param {*} ParentEle 
@@ -360,10 +526,11 @@ class Unit {
         //console.log (tal)
         const div = document.createElement("div")
         div.classList.add("unit-talents")
-        this._talents.forEach((el) => {
+        this._talents.forEach((id) => {
             const p = document.createElement("span")
-            p.textContent = el
+            p.textContent = Lists.TalentName(id)
             p.className = "talent"
+            p.title = Lists.TalentEffect(id)
             div.appendChild(p)
         })
         ParentEle.appendChild(div)
@@ -387,7 +554,6 @@ class Units {
 
     Add(obj) {
         this._list[obj._id] = obj
-        //obj.AddCard()
     }
 
     /**
@@ -402,11 +568,6 @@ class Units {
 
 
 
-//fetch("https://raw.githubusercontent.com/Davonex/MythicBattlesRagnarok/main/asset/units.json")
-fetch("http://127.0.0.1:5500/assets/units.json")
-    .then(response => response.json())
-    .then(response => CreateListe(response))
-    .catch(error => console.log(error))
 
 
 function CreateListe(units) {
@@ -431,7 +592,7 @@ function CreateListe(units) {
         ) {
             let obj = new Unit(units[property]);
             Rag.Add(obj);
-            console.log (obj)
+            console.info (obj)
         }
     }
     console.log("Fetch load succed")
@@ -455,36 +616,44 @@ function CreateListe(units) {
 
 
 
-document.querySelectorAll("#cb-unit-type input").forEach(input => {
-    input.addEventListener('change', (e) => {
-        filter = e.currentTarget.getAttribute("value")
-        for(let i in Rag.ListUnits){
-            //debugger
-            if (Rag.ListUnits[i].Type === filter) { Rag.ListUnits[i].Visibility = e.currentTarget.checked}    
-        }
-        //console.log (e.currentTarget.getAttribute("value"))
-        //var _val = e.is(':checked') ? 'checked' : 'unchecked';
-        //debugger
-        console.log(filter + " " + e.currentTarget.checked );
+// document.querySelectorAll("#cb-unit-type input").forEach(input => {
+//     input.addEventListener('change', (e) => {
+//         filter = e.currentTarget.getAttribute("value")
+//         for(let i in Rag.ListUnits){
+//             //debugger
+//             if (Rag.ListUnits[i].Type === filter) { Rag.ListUnits[i].Visibility = e.currentTarget.checked}    
+//         }
+//         //console.log (e.currentTarget.getAttribute("value"))
+//         //var _val = e.is(':checked') ? 'checked' : 'unchecked';
+//         //debugger
+//         console.log(filter + " " + e.currentTarget.checked );
 
 
-    })
-})
-
-
-
-//cb-unit-type
-//})
-
-
-// const UnitLinks = document.document.querySelectorAll('a.unit').forEach(a => {
-//     a.addEventListener('click',(e)=>{
-//         console.log(e.currentTarget.selectedIndex)
-//         Rag.CurentUnit = e.currentTarget.selectedIndex
-//         Rag.ShowCurrent ();
 //     })
-// })   
+// }) 
 
 
 
-const Rag = new Units;
+
+
+
+const Rag = new Units
+const Lists = new ObjetLists
+
+
+
+/*
+** Method Async
+*/
+fetch("http://127.0.0.1:5500/assets/talents.json")
+    .then(response => response.json())
+    .then(response => Lists.AddAllTalents(response))
+    .catch(error => console.log(error))
+
+//fetch("https://raw.githubusercontent.com/Davonex/MythicBattlesRagnarok/main/asset/units.json")
+fetch("http://127.0.0.1:5500/assets/units-fr.json")
+    .then(response => response.json())
+    .then(response => CreateListe(response))
+    .catch(error => console.log(error))
+
+
