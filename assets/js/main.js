@@ -4,17 +4,23 @@
  */
 class ObjetLists {
     constructor() {
-        this._talents = {};
-        this._type = {}
+        this._talents = [];
+        this._type = []
         this._type[3] = {"name" : "Titans", "effect":"" }
         this._type[0] = {"name" : "Gods", "effect":"" }
         this._type[2] = {"name" : "Monsters", "effect":"" }
         this._type[1] = {"name" : "Heroes", "effect":"" }
         this._type[4] = {"name" : "Troops", "effect":"" }
-        this.AddMenu (this._type,"Type")
+        const FormType =  this._AddForm ("Type")
+        this._CheckBox (FormType,this._type,"Type")
+        //(this._type,"Type")
         this._filter=[]
     }  
 
+    /**
+     * 
+     * @param {*} Obj 
+     */
     AddAllTalents (Obj) {
         for (const property in Obj) {
             //console.log (Obj[property])
@@ -24,14 +30,21 @@ class ObjetLists {
             }
         }
         //console.log (this._list)
-        this.AddMenu(this._talents,"Talent")
+        const FormTalent = this._AddForm("Talent")
+        this._Select (FormTalent,this._talents,"Talent")
+
     } 
 
-    TalentName(id) { return this._talents[id].name }
+    TalentName(id) { return this._talents[id].name 
+    }
 
-    TalentEffect(id) {return this._talents[id].effect}
-
-    AddMenu (Liste,MenuType) {
+    TalentEffect(id) {return this._talents[id].effect
+    }
+    /**
+     * 
+     * @returns HtmlElement 
+     */
+    _AddForm (Tittle) {
         // id ="cb-unit-talent"
         const MenuBar = document.getElementById("menu-bar")
 
@@ -41,7 +54,7 @@ class ObjetLists {
 
         const Button = document.createElement("div")
             Button.classList.add("w3-button")
-            Button.textContent = MenuType
+            Button.textContent = Tittle
             OneMenudiv.appendChild (Button)
         //Button.id = MenuType
         const IconDown = document.createElement("i")
@@ -53,9 +66,19 @@ class ObjetLists {
             OneMenudiv.appendChild (Form)
         //"w3-dropdown-hover"
         //const Form = document.getElementById(MenuType)
+        //this._CheckBox (Liste,Form,MenuType)
+        return Form
+    
+    }
 
 
-
+        /**
+         * 
+         * @param {*} HtmlForm 
+         * @param {*} Liste 
+         * @param {String} MenuType 
+         */
+    _CheckBox (HtmlForm,Liste,MenuType){
         // loop to add all element checkbox
         for (const id in Liste) {
             const HtmlDivButton = document.createElement("div")
@@ -71,7 +94,7 @@ class ObjetLists {
                         label.appendChild (tn)
                     label.htmlFor=MenuType +"_"+id
                     HtmlDivButton.appendChild (label)
-            Form.appendChild (HtmlDivButton)  
+                HtmlForm.appendChild (HtmlDivButton)  
             
             checkbox.addEventListener('change', (e) => {
                 // console.log (
@@ -85,6 +108,18 @@ class ObjetLists {
             })
         }
     }
+
+    _Select (HtmlForm,Liste,MenuType){
+        for (const id in Liste) {
+            const HtmlA = document.createElement("a") 
+            HtmlA.classList.add("w3-bar-item","w3-button")
+            HtmlA.textContent = Liste[id].name
+            HtmlA.id = MenuType +"_"+id
+            HtmlForm.appendChild (HtmlA) 
+        }       
+    }
+
+
     /**
      * 
      * @param {*} field 
@@ -549,7 +584,7 @@ class Units {
     /* construtor */
     constructor() {
         this.CurentUnit = 1;
-        this._list = {};
+        this._list = [];
     }
 
     Add(obj) {
