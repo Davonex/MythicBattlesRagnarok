@@ -1,0 +1,1492 @@
+[
+    {
+        "id": 1,
+        "unitName": "FREYR",
+        "nameen": "Abundance",
+        "namefr": "Abondance",
+        "effectfr": "Durant la phase de fin de tour, vous pouvez effectuer\nun rappel de troupes sans défausser de carte Art de la\nGuerre.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 3,
+        "unitName": "ANGRBODA",
+        "nameen": "Bad Omens",
+        "namefr": "Mauvais présage",
+        "effectfr": "Tout adversaire qui souhaite attaquer ou cibler Angrboda avec un pouvoir offensif doit au préalable dépenser 1 carte Art de la Guerre.",
+        "type": "permanent",
+        "cost": 0
+    },
+    {
+        "id": 4,
+        "unitName": "TITAN FENRIR",
+        "nameen": "Bitter Jaws",
+        "namefr": "Mâchoires Rancuniéres",
+        "effecten": "{{ATTX}} Make an X dice area attack in any 2 areas in Titan Fenrir’s\nsurroundings.",
+        "effectfr": "{{ATTX}}Effectuez une attaque de zone & X dés dans 2 zones des environs du Titan Fenrir",
+        "type": "offensive",
+        "cost": 2
+    },
+    {
+        "id": 5,
+        "unitName": "LAGERTHA",
+        "nameen": "Block",
+        "namefr": "Blocage",
+        "effectfr": "Chaque fois que Lagertha est la cible d'une attaque, immédiatement apras le lancer des dés du premier assaut et avant tout autre effet, vous pouvez obliger Tunité qui attaque a  relancer jusqu’a 2 dés de votre choix.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 6,
+        "unitName": "VIDAR",
+        "nameen": "Bound Boot",
+        "namefr": "Soulier de Fer",
+        "effectfr": "Vidar n'est pas affecté par le Talent Projection ni ne peut être déplacé par une attaque ou un pouvoir offensif.\r\nVidar peut défausser 1 carte {{AOW}} lorsqu'il est attaqué à portée 0 pour infliger 1 blessure à son attaquant.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 7,
+        "unitName": "BRUNHILD",
+        "nameen": "Bring back the brave",
+        "namefr": "Ramener les braves",
+        "effectfr": "Durant la phase de fin de tour, en plus de pouvoir effectuer un rappel de troupes, vous pouvez déployer à nouveau une de vos troupes détruites dans l'une des vos zone de déploiement ",
+        "type": "permanent",
+        "cost": 0
+    },
+    {
+        "id": 9,
+        "unitName": "SURT",
+        "nameen": "Burning Sweep",
+        "namefr": "Balayage Ardent",
+        "effectfr": "Effectuez une attaque de zone  à X dés dans 2 zones des environs de Surt.",
+        "type": "offensive",
+        "cost": 2,
+        "token": 0
+    },
+    {
+        "id": 10,
+        "unitName": "FREYJA'S CATS",
+        "nameen": "Camouflage",
+        "namefr": "Camouflage",
+        "type": "permanent",
+        "cost": 0
+    },
+    {
+        "id": 12,
+        "unitName": "FAFNIR",
+        "nameen": "Claws And Fangs",
+        "namefr": "Des griffes et des cros ",
+        "effectfr": "{{ATT}}{{X}} {{RAN}}{{0}}\nEffectuez une attaque de zone  à X  dés de porté 0",
+        "type": "offensive",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 13,
+        "unitName": "CULLVEIG",
+        "nameen": "Corruption",
+        "namefr": "Corruption",
+        "effectfr": "Durant votre tour, vous pouvez recruter une unité de troupe ennemie détruite.Ajoutez ses cartes activations à votre pioche. L'adversaire et vous melangez vos nouvelles pioches.\nRedéployer cette troupe dans les environs de Gulveig. Votre adversaire prend 1 carte AdG de la reservce et l'ajoute à sa main   ",
+        "type": "active",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 15,
+        "unitName": "JORMUNGAND",
+        "nameen": "Deadly Venon",
+        "namefr": "Venin Mortel",
+        "effecten": "At the beginning of Jörmungand's activation, make an X dice, range 0 area attack.",
+        "effectfr": "{{ATT}}{{X}}\nAu debut de son activation, effectuez une attaque de zone à X dés de porté 0",
+        "type": "active",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 16,
+        "unitName": "HEL",
+        "nameen": "Death",
+        "namefr": "Mort",
+        "effecten": "Before the start of the game,Hel obtains a Slayer talent of your choosing from Titan, Gos , Hero, Monster or troop",
+        "effectfr": "Avant le debut ce la partie, Hel obtient un talent Tueur au choix parmi Titan, Dieu,\r\nHéros, Monstre ou Troupe.",
+        "type": "permanent",
+        "cost": 0
+    },
+    {
+        "id": 18,
+        "unitName": "IDUNN",
+        "nameen": "Deceptive Youth",
+        "namefr": "Jeunesse Trompeuse",
+        "effecten": "At the end of Idunn's activation all opponents discard the top card from their deck.",
+        "effectfr": "A  la ﬁn de l'activation d'ldunn, tous les  adversaires défaussent la premiere carte de leur pioche. ",
+        "type": "active",
+        "cost": 0,
+        "token": 2
+    },
+    {
+        "id": 19,
+        "unitName": "CULLVEIG",
+        "nameen": "Discord",
+        "namefr": "Discorde",
+        "effectfr": "Donnez le jeton Gullveig à un adversaire durant votre tour.\nIl ne poura pas effectier de manoeuvre ni de rappel de troupes lors de son prochain tour de jeu",
+        "type": "passive",
+        "cost": 1
+    },
+    {
+        "id": 20,
+        "unitName": "FRIGG",
+        "nameen": "Divines Link",
+        "namefr": "Lien Divin",
+        "effectfr": "A son recrutement, prenez les jetons Frigg. Avant le lébut de la partie, posez les jetons sur deux de vos unités dont la valeur totale le PR est de 6 au maximum.\nElles bénéficient du talent gardien uniquement entre eIles jusqu’a ce qu'une de ces inités soit détruite.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 22,
+        "unitName": "TITAN FENRIR",
+        "nameen": "Dusk",
+        "namefr": "Crépuscule",
+        "effecten": "A troop destroyed by Titan Fentir cannot benefit from a troop recall.\nWhen a normal attack from Titan Fenrir is not resolved against its initial target, it inflicts 2 additional wounds on its new target (2 minimum).\nTitan Fenrir suffers -1 defense when he is in an enemy divinity’s surroundings.",
+        "effectfr": "Une troupe détruite par le Titan Fenrir ne peut pas bénéficier d'un rappel de troupes.\nLorsqu’une attaque normale du Titan Fenrir n'est pas résolue contre sa cible initale, elle inflige 2 blessures supplementaires à sa nouvelle cible (minimum 2).\nLe Titan Fenrir subit -1 défense lorsquil est dans les environs d'une divinité ennemie.",
+        "type": "permanent",
+        "cost": 0
+    },
+    {
+        "id": 23,
+        "unitName": "TROLL",
+        "nameen": "Earthbound",
+        "namefr": " Lié à la Terre",
+        "effectfr": "A son recrutement, prenez le Jeton du Troll. Les faces du jeton représentent ses pouvoirs CAILLOU et MONTAGNE.\nLe Troll choisit quelle face est active au déploiement. Au début de son activation, il peut changer de face activée.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 1
+    },
+    {
+        "id": 24,
+        "unitName": "SIF",
+        "nameen": "Earthen Grip",
+        "namefr": "Poigne de la terre",
+        "effecten": "Make a 5 dice area attack targeting only enemy units in one of the areas in Sid's surroundings",
+        "effectfr": "{{ATT}}{{5}}\nEffectuez une attaque de zone a 5 dés uniquement contre les unités ennemies présentes dans l'une des zones des environs de Sif.",
+        "type": "offensive",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 25,
+        "unitName": "FREYJA'S CATS",
+        "nameen": "Fast as Lightning",
+        "namefr": "Vifs comme l'éclair",
+        "effectfr": "Les chats de Freya ne peut pas être la cible d'une attaque ou d'un pouvoir offensif utilisé à porté +2",
+        "type": "passive",
+        "cost": 0
+    },
+    {
+        "id": 26,
+        "unitName": "VETERAN LAGERTHA ",
+        "nameen": "Finale Embrace",
+        "namefr": "Dernière Ètreinte",
+        "effectfr": "Lorsqu'elle est détruite, agertha Vétéran effectue une dernière attaque à 6 dés contre son attaquant s'il est portée 0 ou 1. ",
+        "type": "permanent",
+        "cost": 0
+    },
+    {
+        "id": 27,
+        "unitName": "FREDJA",
+        "nameen": "Freyja's Cats",
+        "namefr": "Chats de Freya",
+        "effecten": "When recruited, you can imediately recruit the Freyja's Cats Monster for 2 RP.",
+        "effectfr": "Lorsque Freyja est recrutée,vous pouvez immédiatement recruter le Monstre Chats de Freyja pour 2 PR.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 28,
+        "unitName": "BALDR",
+        "nameen": "Frigg's Blessing",
+        "namefr": "Bénédiction de Frigg",
+        "effectfr": "Baldr subit 1 blessure de moins par attaque.\nEn revanche, si l'attaquant obtient lors du premier assaut les résultats vierge,1 ,2 ,3 ,4 ET 5 aux dés, Baldr subira à la place 1 blessure supp|émentaire (minimum 1).",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 29,
+        "unitName": "BÖDVAR BJARKI",
+        "nameen": "Fylgja",
+        "namefr": "Fylgja",
+        "effectfr": "Il peut effectuer une ATT de zone à porté 0 ne ciblant que les unitées ennemies au lie d'effectuer une ATT normale. Jusqu'au début de sa prochaine activation, l'Ours possède le talent Bloqueur.\nLes talents et pouvoirs des autres unités de l'affectent pas même s'il le souhaite ",
+        "type": "permanent",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 30,
+        "unitName": "HEL",
+        "nameen": "Ganglati & Ganglot",
+        "namefr": "Ganglati & Ganglot",
+        "effectfr": "A son recrutement, prenez le jeton de Hel.\nAvant le début le la partie, posez ce jeton sur le socle d'une unité ennemie non-divine.\nCette unité perd point de déplacement (pour un minimum de 1).",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 31,
+        "unitName": "THRUD",
+        "nameen": "Geri & Freki",
+        "effecten": "When recruited, you can immediately recruit the Geri & Freki Troop for 0 RP",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 32,
+        "unitName": "HEINDALL",
+        "nameen": "Gjallarhorn",
+        "namefr": "Gjallarhorn",
+        "effectfr": "Effectuez une attaque ornmale de portée 2. Les unités ne comptent pas comme un obstacle pour déterminer si la cible est visible.\nSi la cible n'est pas une divinité, elle lache également immédiatement toute pierre divine collectée.",
+        "type": "offensive",
+        "cost": 1
+    },
+    {
+        "id": 33,
+        "unitName": "IDUNN",
+        "nameen": "Golden Apples",
+        "namefr": "Pomme dorées",
+        "effectfr": "A son recrutement, prenez les jetons POMMES DOREES.\nAu début de la premiére activation d’Idunn, placez chacune des POMMES DOREES dans une zone différente du plateau.\nUne unité alliée qui se trouve dans ou traverse une zone contenant une POMME DOREE peut la consommer (et la défausser définitivement) pour regagner 1 point le vitalité.\nUne unité ne peut en consommer plus d'une par tour.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 3
+    },
+    {
+        "id": 34,
+        "unitName": "GULLINBURSTI",
+        "nameen": "Golden Silks",
+        "namefr": "Soies d'or",
+        "effectfr": "Lorsqu'un adversaire détruit Gullinbursti, il prend une carte {{AOW}}  de la reserve et l'ajoute à sa main.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 35,
+        "unitName": "BRUNHILD",
+        "nameen": "Grudge",
+        "namefr": "Rancune",
+        "effectfr": "Lorsqu'elle cible un dieu, elle gagne +2 ATT pour son attaque ",
+        "type": "offensive",
+        "cost": 1
+    },
+    {
+        "id": 36,
+        "unitName": "ANGRBODA",
+        "nameen": "Gruesome Curse",
+        "namefr": "Malédiction Funeste ",
+        "effectfr": "Lorsqu'un monstre allié est détruit (y compris Angrboda), son attaquant subit une attaque d'autant de dés que le coût de recrutement du monstre, +2. Cette attaque ne peut-être redirigée.",
+        "type": "permanent",
+        "cost": 0
+    },
+    {
+        "id": 38,
+        "unitName": "TYR",
+        "nameen": "Hand of Tyr",
+        "namefr": "Main de tyr",
+        "effecten": "{{ATT}}{{6}}{{RAN}}{{0}}\nMake a 6 dice, range 0 area attack",
+        "effectfr": "{{ATT}}{{6}}{{RAN}}{{0}}\nEffectuez une attaque de zone à 6 de porté 0.",
+        "type": "offensive",
+        "cost": 1
+    },
+    {
+        "id": 39,
+        "unitName": "HARALD HARDRADA",
+        "nameen": "The Merciless",
+        "namefr": "Impitoyable",
+        "type": "passive",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 40,
+        "unitName": "VETERAN LAGERTHA ",
+        "nameen": "Heroic break through",
+        "namefr": "Percée Héroïne",
+        "effectfr": " Effectuez une attaque de zone de portée 0. Elle peut ensuite se déplacer d'une zone, sans être affectée par le talent Bloqueur. ",
+        "type": "offensive",
+        "cost": 1
+    },
+    {
+        "id": 41,
+        "unitName": "BEOWULF",
+        "nameen": "Hrunting",
+        "namefr": "Hrunting",
+        "effectfr": "Au lieu de lancer les dés pour le 1er assaut, il peut infliger automatiquement 2 blessures à sa cible, qui ne peuvent pas être annulées ou modifiées.",
+        "type": "offensive",
+        "cost": 1
+    },
+    {
+        "id": 42,
+        "unitName": "HRYM",
+        "nameen": "Ice Lord",
+        "namefr": "Seigneur des glaces",
+        "effectfr": "A son recrutement, prenez les jetons de Hrym.\nA la fin de son activation, vous pouvez mettre un jeton de Hrym dans sa zone.\nLe type de terrain est alors remplacé par Polaire (tous les éléments 3D sont enlevés).\nCes jetons restent en jeu jusqu’à la fin de la partie.",
+        "type": "passive",
+        "cost": 1,
+        "token": 3
+    },
+    {
+        "id": 43,
+        "unitName": "ASLAUG",
+        "nameen": "Ingenuity",
+        "namefr": "Ingénieuse",
+        "effectfr": "Au debut de l'activation, piochez une carte OU regardez les 3 premières cartes de votre pioche et remettez-les dans l'ordre de votre choix",
+        "type": "permanent",
+        "cost": 0
+    },
+    {
+        "id": 44,
+        "unitName": "SON OF NUSPELL",
+        "nameen": "Justice",
+        "effecten": "During Tyr's activation, you can retrieve a non-divinity card from your discard pile.\nYou choose one of your opponents to the same.",
+        "type": "permanent",
+        "cost": 0
+    },
+    {
+        "id": 45,
+        "unitName": "HARALD HARDRADA",
+        "nameen": "Landeythan Banner",
+        "namefr": "Bannière Landeythan",
+        "type": "passive",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 46,
+        "unitName": "HEL",
+        "nameen": "Life",
+        "namefr": "Vie",
+        "effecten": "A unit in Hel's area regains 1 vitaly point",
+        "effectfr": "Une unité dans la zone de Hel regagne 1 point de vitalité.",
+        "type": "active",
+        "cost": 0
+    },
+    {
+        "id": 47,
+        "unitName": "NJORD",
+        "nameen": "Lord of the Currents",
+        "namefr": "Seigneur des Courants",
+        "effectfr": "Les unités volantes ennemies ne peuvent franchir la zone où se trouve Njord durant un vol rapide ni l’attaquer au moyen d'une attaque aérienne.\nLorsqu'l est dans une zone depuis le début du tour en cours, Njord et ses ennemis comptent la zone oui il se trouve comme étant de type Eau",
+        "type": "permanent",
+        "cost": 0
+    },
+    {
+        "id": 48,
+        "unitName": "LOKI",
+        "nameen": "Malice",
+        "namefr": "Malice",
+        "effectfr": "Quand Loki est la cible d'une attaque de portée 0, il peut la rediriger vers une autre unité\nque l'attaquant, présente lans la zone de Loki.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 49,
+        "unitName": "ODIN",
+        "nameen": "Master of Rune ",
+        "namefr": "Maitre des Runes ",
+        "effectfr": "Au début de sa phase d'activation, Odin peut considérer, pour ce tour, toute pierre divine dans sa zone comme étant libre.",
+        "type": "active",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 50,
+        "unitName": "THOR",
+        "nameen": "Master of Thunder",
+        "namefr": "Maitre di Tonnerre",
+        "effecten": "Make a 6 dice area attack in one of the areas in Thor's surroundings.",
+        "effectfr": "{{ATT}}{{6}} Effectuez une attaque de zone à 6 dés dans une zone des environs de Thor",
+        "type": "offensive",
+        "cost": 1
+    },
+    {
+        "id": 51,
+        "unitName": "LOKI",
+        "nameen": "Metamorphosis",
+        "namefr": "Métamorphose",
+        "effectfr": "Une seule utilisation par partie.\nA son recrutement, prenez le jeton de Loki et posez-le sur son socle.\nLorsque Loki est la cible d'une attaque, vous pouvez défausser le jeton pour échanger de place Loki avec une autre unité alliée dans ses environs. L'attaque se poursuit sur l'unité le remplacant.",
+        "type": "passive",
+        "cost": 0
+    },
+    {
+        "id": 52,
+        "unitName": "Skadi ",
+        "nameen": "Mistress of Traps",
+        "namefr": "Maitresse des pieges",
+        "effectfr": "A son recrutement, prenez les jetons Skadi.\nPlacez un jeton dans une zone de type Neutre.\nLorsqu’une unité ennemie pénétre dans cette zone, elle perd 1 point de vitalité et ne\njeut plus se déplacer pour le reste du tour.\nLe jeton retourne alors dans votre réserve.",
+        "type": "active",
+        "cost": 1,
+        "token": 2
+    },
+    {
+        "id": 53,
+        "unitName": "THOR",
+        "nameen": "Mjölnir",
+        "namefr": "Mjolnir",
+        "effecten": "Make a normal attack on a unit in any area of the game board, igniring obstacles.",
+        "effectfr": "{{ATT}}{{5}} Effectuez une attaque normale contre une unité dans n'importe quelle zone du plateau en ignorant les obstacles.",
+        "type": "offensive",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 54,
+        "unitName": "SURT",
+        "nameen": "Muspell's Braziers",
+        "namefr": "Brasiers de Muspell",
+        "effectfr": "A son recrutement, prenez les 2 jetons 3D BRASIERS DE MUSPELL.\nChoisissez 2 zones dans les environs de Surt, Placez un jeton BRASIERS DE MMSPELL dans chacune de ces zones. Leur type de terrain est alors remplacé par Ardent (tous les jetons et éléments 3D précédents sont enlevés).",
+        "type": "active",
+        "cost": 1,
+        "token": 2
+    },
+    {
+        "id": 55,
+        "unitName": "ODIN",
+        "nameen": "Mutilating Rage",
+        "namefr": "Fureur Mutilatrice",
+        "effectfr": "Choisissez une zone dans les environs d’Odin. Chaque unité ennemie dans cette zone subit une attaque normale a 6 dés.\nCes attaques ne peuvent étre redirigées.",
+        "type": "offensive",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 56,
+        "unitName": "BEOWULF",
+        "nameen": "Naegling",
+        "namefr": "Naegling",
+        "effectfr": "Lorqu'il attaque, vous pouvez transformer un resultat vierge du 1er assaut en un 5",
+        "type": "passive",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 57,
+        "unitName": "FREDJA",
+        "nameen": "Necklace of Brisingar",
+        "namefr": "Collier des Brisingar",
+        "effectfr": "Freyja et les unités alliées dans sa zone ignorent la premiére blessure infligée par les attaques de portée O.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 58,
+        "unitName": "EGILL",
+        "nameen": "Nidstang",
+        "namefr": "Nidstang",
+        "effectfr": "Aucune relance ennemie ne peut être effectuée dans la zone d'Egill.\nIl est aussi immunisé aux attaques de zone.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 59,
+        "unitName": "Skadi ",
+        "nameen": "Ondurdis",
+        "namefr": "Ondurdis",
+        "effecten": "When Skadi carries out a range +1 attack, her target suffer 1 extra wound (1 minimum)",
+        "effectfr": "Lorsque Skadi effectue une attaque de portée +1, sa cible subit une blessure suplémentaire (Minimun 1)",
+        "type": "passive",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 61,
+        "unitName": "ASLAUG",
+        "nameen": "Prothecy",
+        "namefr": "Prothétie",
+        "effectfr": "regardez les 3 premières cartes de la pioche de l'un de vos adversaires et remettez-les dans l'ordre de votre choix",
+        "type": "offensive",
+        "cost": 1,
+        "token": 2
+    },
+    {
+        "id": 62,
+        "unitName": "BJÖRN",
+        "nameen": "Raid leader",
+        "namefr": "Chef de raid",
+        "effectfr": "À la fin de l'activation, vous pouvez déplacer d'une zone une de vos unités ou une unité d'un allié",
+        "type": "active",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 63,
+        "unitName": "EGILL",
+        "nameen": "Recounting the saga",
+        "namefr": "Conter la saga",
+        "effectfr": "À la fin de l'activation d'Egill, vous pouvez piocher 1 carte",
+        "type": "permanent",
+        "cost": 0,
+        "token": 3
+    },
+    {
+        "id": 64,
+        "unitName": "SIF",
+        "nameen": "Royal Presence",
+        "namefr": "Prestance Royale",
+        "effecten": "An enemy unit must discard 1 Art of War card befor voluntarily entering Sif's area.\nAttacks against Sif suffer -1 offensive",
+        "effectfr": "Une unité ennemie doit se défausser d'une carte {{AOW}} avant d’entrer volontairement dans la zone de Sif. Les attaques contre Sif subissent -1 en combat.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 65,
+        "unitName": "BJÖRN",
+        "nameen": "Savagery",
+        "namefr": "Férocité",
+        "effectfr": "{{ATT}} {{X}} {{RAN}} {{0}}\nEffectué une attaque de zone à X dés de portée 0",
+        "type": "offensive",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 66,
+        "unitName": "FAFNIR",
+        "nameen": "Scorn",
+        "namefr": "Dédain",
+        "effectfr": "Fafnir ignore les blessures des attaques de zone ainsi que des attaques de portée 1+. Les talents et pouvoirs qui pourraient déplacer Fafnir sont ignorés.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 67,
+        "unitName": "DRAUGR",
+        "nameen": "Sepulcral Willpower",
+        "namefr": "Volonté sépulcrale",
+        "effectfr": "Le Draugr ne subit jamais plus de 2 blessures  par attaque",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 68,
+        "unitName": "LAGERTHA",
+        "nameen": "Shield Wall",
+        "namefr": "Levée de boucliers",
+        "effectfr": "Toutes les unités alliées dans la zone de Lagertha (sauf elle) gagnent +1 défense.",
+        "type": "passive",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 69,
+        "unitName": "EYSTEINN",
+        "nameen": "Sìbilja",
+        "namefr": "Sìbilja",
+        "effectfr": "Déplacez toutes les unités ennemies se trouvant dans sa zone vers une zone adjacente OU choisissez une unité ennemie dans les environs de sa zone, celle-ci effectue une ATT normal dans la zone d'Eysteinn Beli contre une de ses unitité alliées",
+        "type": "active",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 70,
+        "unitName": "FREYR",
+        "nameen": "Skidbladnir ",
+        "namefr": "Skidbladnir ",
+        "effectfr": "Freyr est immunisé aux effets des terrains de type Polaire, Aquatique, Lave et Ardent Freyr peut défausser 1 carte {{AOW}} pour augmenter son déplacement de 1 lors d'une action de marche.",
+        "type": "active",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 71,
+        "unitName": "HROLF KRAKI",
+        "nameen": "Skofnung",
+        "namefr": "Skofnung",
+        "effectfr": "Hrolf gagne +1 combat et défense pour chaque unité ennemie présente dans sa Zone. Les unités ennemies qui souhaitent quitter la zone avec une action de marche, de course ou d’ascension doivent d’abord défausser 1 carte {{AOW}}.",
+        "type": "passive",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 72,
+        "unitName": "HROLF KRAKI",
+        "nameen": "Sowing your treasure",
+        "namefr": "Semer son trésor",
+        "effectfr": "A son recrutement, prenez le jjeton de Hrolf. Placez-le dans une zone de ses environs. Une unité ennemie qui débute son activation dans les environs du jeton doit se déplacer et s'arréter dans cette zone (si elle n’est pas déja saturée) ou défausser 1 carte {{AOW}} pour éviter cet effet. Un adversaire peut retirer à tout moment ce Jeton de la partie en défaussant 2 cartes {{AOW}}.",
+        "type": "active",
+        "cost": 1,
+        "token": 1
+    },
+    {
+        "id": 73,
+        "unitName": "DRAUGR",
+        "nameen": "Spectral Touch",
+        "namefr": "Toucher spectral",
+        "effectfr": "Lorsque le Draugr se trouve dans une zone contenant une ou plusieurs pierres divines, elles ne peuvent y étre collectées ou absorbées par des unités enemies, y compris par des talents ou pouvoirs.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 74,
+        "unitName": "HRYM",
+        "nameen": "Sweep",
+        "namefr": "Balayage",
+        "effectfr": "{{ATT}}{{X}}Effectuez une attaque de zone & X dés dans la zone de Hrym ainsi que dans une zone adjacente.",
+        "type": "offensive",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 75,
+        "unitName": "EYSTEINN",
+        "nameen": "Tactician",
+        "namefr": "Tacticien",
+        "effectfr": "La manoeuvre Piocher des Cartes ne coute aucune carte {{AOW}}",
+        "type": "active",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 76,
+        "unitName": "THOR",
+        "nameen": "Tanngnjostr & Tanngrisnir",
+        "namefr": "Tanngnjostr & Tanngrisnir",
+        "effecten": "At the end of his activation phase, Thor regains 1 vitality point.\nWhen Thor is recruited, you can immediately recruit the Tanngnòstr & Tanngrisnir Monster for 1 RP",
+        "effectfr": "A la fin de sa phase d'activation, Thor regagne 1 point de vitalité.\r\nLorsque Thor est recruté, vous pouvez immédiatement recruter le Monstre Tanngnjostr & Tanngrisnir pour 1 PR.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 77,
+        "unitName": "YMIR",
+        "nameen": "Telluric Absoption",
+        "namefr": "Absorption Téllurique",
+        "effectfr": "{{ATT}} {{X}}\nEffectuez une attaque de zone X dés dans une zone adjacente.\nPlacez un jeton Désert de Givre sur la zone ciblée si elle n'en contient pas. Dans ce cas, tous les éléments 3D précédents dans la zone sont enlevés.",
+        "type": "offensive",
+        "cost": 2,
+        "token": 0
+    },
+    {
+        "id": 78,
+        "unitName": "YMIR",
+        "nameen": "Telluric Entity",
+        "namefr": "Entité Téllurique",
+        "effectfr": "A son recrutement, prenez les 8 jetons 3D Désert de Givre.\r\nA la fin de l'activation d'Ymir placez un jeton Désert de Givre dans sa zone (si elle n'en contient pas déja). Le type de terrain est remplacé par Polaire (tous les 3D précédents sont enlevés)\r\nQuand un jeton Désert de Givre est placé, Ymir regagne I point de vitalité.\r\nSi Ymir subit au moins 1 blessure lors d'une attaque dans une zone contenant un jeton Désert de Givre, le jeton retourne dans votre réserve, Le terrain retrouve alors son type précédent.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 8
+    },
+    {
+        "id": 79,
+        "unitName": "VIDAR",
+        "nameen": "Soulier de Fer",
+        "namefr": "Le Vengeur",
+        "effectfr": "Vidar peut contre-attaquer sans avoir a defausser une carte activation s'il n'utilise pas le talent Initative ",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 80,
+        "unitName": "SIGURD",
+        "nameen": "The ring od Andvari",
+        "namefr": "L'anneau d'Andvari",
+        "effectfr": "A chaque fois que le joueur de Sigurd doit lancer un ou plusieurs dés, y compris en dehors de activation de Sigurd, il peut choisir d'en relancer un.\r\nS'il le fait, Sigurd perd 1 point de vitalité.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 81,
+        "unitName": "BÖDVAR BJARKI",
+        "nameen": "The sleeper & the bear",
+        "namefr": "L'endormi & L'ours",
+        "effectfr": "A son recrutement, prenez les figurines de Bédvar I’Endormi et Bédvar |'Ours. Déployez l'Ours normalement, et déployez en méme temps I'Endormi a deux zones de lui, hors zones touchant votre bord de table.Endormi n’agit pas, ne peut se déplacer ou étre déplacé. Il subit -2 défense si l'Ours n'est pas dans ses environs. Il peut néanmoins contre-attaquer normalement.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 1
+    },
+    {
+        "id": 82,
+        "unitName": "JORMUNGAND",
+        "nameen": "Tidal Wave",
+        "namefr": "Raz-De-Marée",
+        "effecten": "When recruited, take the 3 3D. TIDAL WAVE tokens.\nChoose up to 3 areas in Jömungand’s surroundings. Place a TIDAL WAVE token in each of these areas. The terrain type changes to Water (any previous 3D elements and tokens are removed).\nThe owner gets these tokens back at the end of Jörmungand's next activation.\nThe terrain type then reverts, back to its previous terrain type.",
+        "effectfr": "A son recrutement, prenez les 3 Jetons 3D RAZ-DE-MAREE.\nChoisissez jusqu’a 3 zones dans les environs de Jormungand.\nPlacez un jeton RAZ-DE-MAREE dans chacune de ces zones. Leur type de terrain est alors remplacé par Eau (tous les jetons et éléments 3D précédents sont enlevés).\nCes jetons restent en jeu jusqu'à la fin de la prochaine activation de Jormungand. Le terrain retrouve alors son type précédent.\"",
+        "type": "active",
+        "cost": 2,
+        "token": 3
+    },
+    {
+        "id": 83,
+        "unitName": "TYR",
+        "nameen": "Tiwaz",
+        "namefr": "Tiwaz",
+        "effecten": "After Tyr's activation, if the player activates another unit in the same turn, that unit can re-roll a dice (even a black resultà if it attacks",
+        "effectfr": "Aprés l'activation de Tyr, si le joueur effectue une nouvelle activation d'unité, cette unité pourra relancer un dé (méme un résultat vierge) si elle attaque.",
+        "type": "passive",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 84,
+        "unitName": "BALDR",
+        "nameen": "Touched by the sun",
+        "namefr": "Touché par le soleil",
+        "effectfr": "Au début de l'activation de Baldr, vous pouvez renvoyer iusqu’a 2 cartes de votre main dans votre pioche.\nMélangez ensuite votre pioche, puis piochez ce même nombre de cartes.",
+        "type": "active",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 85,
+        "unitName": "HEINDALL",
+        "nameen": "Vigilance",
+        "namefr": "Vigilance",
+        "effectfr": "A la fin de l'activation d'Heimdall, si une unité ennemie se trouve dans ses environs, le joueur actif peut rendre la premiere carte de\nsa pioche OU défausser l'une des cartes de sa main pour en piocher deux.",
+        "type": "permanent",
+        "cost": 0
+    },
+    {
+        "id": 86,
+        "unitName": "FRIGG",
+        "nameen": "Weaving the threads of the Future ",
+        "namefr": "Tisser les fils de l'avenir",
+        "effectfr": "Ciblez jusqu’a deux unités dans les environs de Frigg, et effectuez contre elles une attaque normale à 6 dés.\nPuis, regardez les 2 premiéres cartes de votre pioche OU de celle d'un adversaire, et replacez-les dans ordre de votre choix.",
+        "type": "offensive",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 87,
+        "unitName": "NJORD",
+        "nameen": "Whirlwind ",
+        "namefr": "Tourbillon",
+        "effectfr": "Effectuez une attaque de zone à 6 dés dans une zone les environs de Njord. Vous jouvez ensuite déplacer\nune des unités présentes dlans cette zone en tenant compte des restrictions des terrains et frontiéres.",
+        "type": "offensive",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 88,
+        "unitName": "FENRIR",
+        "nameen": "The Hunt is on ",
+        "namefr": "En Chasse",
+        "effectfr": "Lorsque Fenrir effectue une action d’attaque, l'unité ennemie subit -1 défense pour cette attaque.\r\nFenrir peut ensuite se déplacer d'une zone, sans étre affecté par le talent Bloqueur.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 89,
+        "unitName": "FENRIR",
+        "nameen": "The Devourer",
+        "namefr": "Le Dévoreur",
+        "effectfr": "Fenrir peut utiliser ses 2 actions simples du tour pour effectuer 2 actions d'attaque.\r\nCe pouvoir peut se cumuler avec le pouvoir EN CHASSE.",
+        "type": "offensive",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 90,
+        "unitName": "GARM",
+        "nameen": "Howl",
+        "namefr": "Hurlement",
+        "effecten": "{{ATT}}{{5}}{{RAN}}{{1}}\nMake a 5 dice, range 1 area attack",
+        "effectfr": "{{ATT}}{{5}}{{RAN}}{{1}}\nEffectuez une attaque de zone à 5 de porté 1.",
+        "type": "offensive",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 91,
+        "unitName": "GARM",
+        "nameen": "Frenzy",
+        "namefr": "Frénésie",
+        "effecten": "{{ATT}}{{5}}{{RAN}}{{0}}\nMake a 5 dice, range 1 area attack, then Garm loses 1 vitality point",
+        "effectfr": "{{ATT}}{{5}}{{RAN}}{{0}}\nEffectuez une attaque de zone à 5 de porté 0.Puis Garm perd 1 point de vilalité",
+        "type": "offensive",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 92,
+        "unitName": "GRENDEL",
+        "nameen": "Hail of Blows",
+        "namefr": "Pluie de coups",
+        "effectfr": "{{ATT}}{{X}}{{RAN}}{{0}}\nEffectuez une attaque de zone à X dés de portée 0.\nGrende! peut effectuer une Projection contre chaque ennemi attaqué, et ce quel que soit le nombre de résultats vierges obtenus.",
+        "type": "offensive",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 93,
+        "unitName": "GRENDEL",
+        "nameen": "Resilience",
+        "namefr": "Résilience",
+        "effectfr": "Grendel ignore la premiére blessure infligée par chaque attaque.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 94,
+        "unitName": "GULLINBURSTI",
+        "nameen": "Tusk Attack",
+        "namefr": "Coup de boutoir",
+        "effectfr": "A la fin de l'activation de Gullinbursti, effectuez une attaque normale à 3 dés contre chaque unité ennemie dans sa zone.",
+        "type": "passive",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 95,
+        "unitName": "GULLINBURSTI",
+        "nameen": "Forcing the passage",
+        "namefr": "Passage en force",
+        "effectfr": "Lorsque Gullinbursti effectue une action de marche, elle ne prend pas fin s'il pénétre dans une zone qui contient une ou plusieurs unités ennemies. De plus, il ignore le talent Bloqueur.",
+        "type": "passive",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 96,
+        "unitName": "EIKTHYRNIR",
+        "nameen": "Charge",
+        "namefr": "Charge",
+        "effectfr": "{{ATT}} {{X}}\nCHARGE doit étre déclaré au début de l'activation d'Eikthymir.\nVous pouver déplacer Eikthyrnir Jusqu’a 2 zones, II n’a pas besoin de s'aréter si celles-ci contiennent des unités ennemies.\nJuste apres avoir pénétré dans chacune celles, effectuez une attaque de zone a X dés, l'activation d’Eikthyrnir prend ensuite fin.",
+        "type": "active",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 97,
+        "unitName": "EIKTHYRNIR",
+        "nameen": "Sacred Horns",
+        "namefr": "Bois Sacrés",
+        "effectfr": "A son recrutement, prenez les 2 jetons Eikthyrnir.\nA la fin de l'activation d'Eikthymir, vous pouvez placer ces jetons dans ses environs. Leur type de terrain est remplacé par Eau.\nRécupérez-les au début de la prochaine activation d'Eikthyrnir. Le terrain retrouve alors son type récédent.",
+        "type": "passive",
+        "cost": 0,
+        "token": 2
+    },
+    {
+        "id": 98,
+        "unitName": "SON OF NUSPELL",
+        "nameen": "Horde",
+        "namefr": "Horde",
+        "effectfr": "Durant votre tour, vous pouvez défausser 1 carte {{AOW}} pour déployer à nouveau cette unité si elle a été précédemment détruite.\nCe déploiement ne compte pas comme une activation. L'unité revient a pleine vitalité.",
+        "type": "permanent",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 99,
+        "unitName": "SON OF NUSPELL",
+        "nameen": "Furnace",
+        "namefr": "Fournaise",
+        "effectfr": "A son recrutement, prenez le jeton Fils de Muspell.\nPlacez le jeton sur une unité ennemie dans la zone du fils de Muspell. Lorsque l'unité ennemie s'active, elle perd 1 point de vitalité.\nLe jeton retourne alors dans votre réserve.",
+        "type": "active",
+        "cost": 1,
+        "token": 1
+    },
+    {
+        "id": 100,
+        "unitName": "HRAESLVEG",
+        "nameen": "Violent Gust",
+        "namefr": "Rafale violente",
+        "effecten": "Choose a unit in Hraesvelg's area and move it 1 or 2 areas away. This move ignores all obsctacles",
+        "effectfr": "Choisissez une unité présente dans la zone de Hraesvelg et déplacez-la d'1 ou 2 zones.\r\nCe déplacement ignore les obstacles.",
+        "type": "active",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 101,
+        "unitName": "HRAESLVEG",
+        "nameen": "Devour the dead",
+        "namefr": "Dévorer les mort ",
+        "effecten": "When Hraesvelg destroys a unit, remove 1 of its activation cards from the game.\nIf possible, take it from the discard pile, or if not then take it from the player's hand or from their deck, which the player then shuffles.",
+        "effectfr": "Lorque Hraesvelg détruit une unité, enlevez une des ses cartes activation du jeu. Prenez-la prioritairement dans la defausse, à défaut dans la main du joeur ou dans sa pioche, qu'il mélange alors.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 102,
+        "unitName": "FREYR",
+        "nameen": "Gullinbursti",
+        "namefr": "Gullinbursti",
+        "effectfr": "son recrutement, vous jouvez immédiatement recruter le Monstre Gullinbursti pour 1PR.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 103,
+        "unitName": "TANNGRISNIR & TANNGNJOSTR",
+        "nameen": "Les ennemis présents dans les environs de Tanngnjostr & Tanngrisnir ne peuvent collecter de pierre divine qu’en dépensant d’abord 1 carte {{AOW}}.",
+        "namefr": "Droit de passage",
+        "effecten": "Whenever an enemy unit tiries to claim a divine stone in Tanngrisnir & Tanngnjòstr surroundings, the enemy init must first discard 1 Art of War card.",
+        "effectfr": "Les ennemis présents dans les environs de Tanngnjostr & Tanngrisnir ne peuvent collecter de pierre divine qu’en dépensant d’abord 1 {{AOW}}.",
+        "type": "passive",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 104,
+        "unitName": "TANNGRISNIR & TANNGNJOSTR",
+        "nameen": "Horned and Stubborn",
+        "namefr": "Cornus et têtus",
+        "effectfr": "A la fin d'une action de course, vous pouvez effectuez une attaque de zone à 3 dés à porté 0, qui bénéficie du talent Projection",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 105,
+        "unitName": "HYRROKKIN",
+        "nameen": "Venom",
+        "namefr": "Venin",
+        "effectfr": "A la fin d'une attaque de portée 0 prenant pour cible Hyrrokkin, infligez 1 blessure a son attaquant.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 106,
+        "unitName": "HYRROKKIN",
+        "nameen": "Beast's Bite",
+        "namefr": "Morsure de la bête",
+        "effectfr": "{{ATT}}{{X}}{{RAN}}{{0}}\nEffectuez une attaque de zone à X  dés et de porté 0 ne ciblant que les unités ennemis ",
+        "type": "offensive",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 107,
+        "unitName": "GRENDEL'S MOTHER",
+        "nameen": "Sneaky Crone",
+        "namefr": "Mégère Sournoise",
+        "effectfr": "Lorsque la Mère de Grendel est la cible d'une attaque, elle peut la rediriger  vers une unité alliée dans sa zone.",
+        "type": "passive",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 108,
+        "unitName": "GRENDEL'S MOTHER",
+        "nameen": "Curse",
+        "namefr": "Malédiction",
+        "effectfr": "A son recrutement, prenez le jeton Mère de Grendel. Lorsqu'une unité détruit la mère de Grendel, placez ce jeton sur un des pouvoirs de cette unité. Le pouvoir choisi devient inutilisable jusqu'a la fin de la partie.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 1
+    },
+    {
+        "id": 109,
+        "unitName": "MIMIR",
+        "nameen": "Divination",
+        "namefr": "Divination",
+        "effectfr": "La manoeuvre Chercher une carte ne coûte aucune carte {{AOW}}",
+        "type": "active",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 110,
+        "unitName": "MIMIR",
+        "nameen": "Deep Root",
+        "namefr": "Racine profonde",
+        "effectfr": "Mimir peut effectuer l'action de collecte jusqu'à {{X}} zones de distance. La zone collectée doit être visible de Mimir.",
+        "type": "active",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 111,
+        "unitName": "NIDHOGG",
+        "nameen": "Vicious Blow",
+        "namefr": "Coup Vivieux",
+        "effectfr": "{{ATT}}{{X}}{{RAN}}{{}}\nA la fin de l'activation de Nidhogg, effectuez une attaque normale à X dés de portée 1.\nL'unité ciblé de peut pas contre-attaquer.",
+        "type": "active",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 112,
+        "unitName": "NIDHOGG",
+        "nameen": "Lord of the Roots",
+        "namefr": "Seigneur des Racines",
+        "effectfr": "Une unité attaquant Nidhogg subit -1 défense lors de sa contre-attaque.\nToute unité blessant Nidhogg lors d'une attaque de portée 0 perd point de vitalité.",
+        "type": "passive",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 113,
+        "unitName": "RATATOSK",
+        "nameen": "Sowing Discord",
+        "namefr": "Semer le trouble",
+        "effectfr": "ll est impossible de cibler Ratatosk si une autre unité ciblable se trouve dans sa zone, y compris pour un effet bénéfique.",
+        "type": "passive",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 114,
+        "unitName": "RATATOSK",
+        "nameen": "Stirring up Bitterness",
+        "namefr": "Attiser la rancune",
+        "effectfr": "Au début de activation de Ratatosk, choisissez un adversaire.\nII doit vous montrer 1 carte activation de sa main, qu'il sera obligé d'utiliser durant son prochain tour, ou vous laisser piocher 1 carte.",
+        "type": "active",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 115,
+        "unitName": "RATATOSK",
+        "nameen": "Crafty",
+        "namefr": "Malin",
+        "effectfr": "Ratatosk ne subit jamais plus de 2 blessures par Attaque",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 116,
+        "unitName": "TROLL",
+        "nameen": "Peble",
+        "namefr": "Caillou",
+        "effectfr": "Le Troll gagne +1 Déplacement  et le talent Collecteurs de gemmes. Il peut traverser des zones contenant des unités ennemis.",
+        "type": "passive",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 117,
+        "unitName": "TROLL",
+        "nameen": "Mountain",
+        "namefr": "Montagne ",
+        "effectfr": "Le Troll gagne +1 Portée et gagne  le talent Projection.. Lorsqu'il utilise Force de la Nature, il peut choisir de ne pas enlever d'élément 3D.",
+        "type": "passive",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 118,
+        "unitName": "UTGARDA-LOKI",
+        "nameen": "Master of challenges",
+        "namefr": "Maitres de defis",
+        "effectfr": "Lorsqu'il cible ou est ciblé par une unité ennemie, Utgarda-Loki peut décider, avant le premier assaut\r\n et pour toute la durée de lattaque, d'utiliser les valeurs adverses de combat, de défense, ou des deux, à la\r\nplace des siennes. II utilise alors les mémes valeurs que si 'unité ennemie était pleine vitalité.",
+        "type": "permanent",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 119,
+        "unitName": "UTGARDA-LOKI",
+        "nameen": "Lord of Utgard",
+        "namefr": "Seigneur d'Utgard",
+        "effectfr": "Au début de l'activation d'Utgarda-Loki, vous pouvez défausser jusqu’a 2 cartes de votre main, au choix\r\nChaque adversaire s’en défausse ensuite d’autant, au hasard.",
+        "type": "active",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 120,
+        "unitName": "ICE JOTUNN",
+        "nameen": "Icy Touch",
+        "type": "active",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 121,
+        "unitName": "HUGINN & MUNIN",
+        "nameen": "Thought & Memory",
+        "namefr": "Pensée et Mémoire",
+        "effectfr": "Durant activation d'Hugin & Munin, vous pouvez récupérer dans votre défausse une carte activation d'une autre unité d'une valeur de 3 PR ou Moins et l'ajouter à votre main.",
+        "type": "passive",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 122,
+        "unitName": "HUGINN & MUNIN",
+        "nameen": "Prescience",
+        "namefr": "Prescience",
+        "effectfr": "A la fin de Pactivation d' Hugin & Murnin, vous pouvez mettre 2 cartes de votre main au dessous de votre pioche et piocher 2 cartes.\nEnsuite, regardez la main d'un de vos adversaires.",
+        "type": "active",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 123,
+        "unitName": "FREDJA",
+        "nameen": "Valshamr",
+        "namefr": "Valshamr",
+        "effectfr": "Une seule utilisation par partie.\nPlacez Freyja dans n'importe quelle zone non saturée de type Neutre du plateau.",
+        "type": "active",
+        "cost": 2,
+        "token": 0
+    },
+    {
+        "id": 124,
+        "unitName": "IVAR",
+        "nameen": "Close the Trap",
+        "namefr": "Refermer le piège",
+        "effectfr": "Regardez les cartes dans la main d'un de vos adversaires.\nChoisissez-y une carte activation d’unité. Votre adversaire devra activer cette unité en tant que premiére activation lors ide son prochain tour.",
+        "type": "passive",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 125,
+        "unitName": "IVAR",
+        "nameen": "Supreme Leader",
+        "namefr": "Leader Suprême",
+        "effectfr": "Lors de l'utilisation du talent Leader, vous pouvez choisir une unité de type Héros à la place d'une unite de type Troupe",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 126,
+        "unitName": "IVAR",
+        "nameen": "Crippled",
+        "namefr": "Estropié",
+        "effectfr": "Lors d'une action de course, Ivar ne gagne pas +1 déplacement",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 127,
+        "unitName": "RAGNAR",
+        "nameen": "Born Cheiftain",
+        "namefr": "Meneur",
+        "effectfr": "Pour utiliser MENEUR, Ragnar doit étre la premiére unité activée durant votre tour.\nDurant ce tour, votre limite d'activations passe de 2 4 3.",
+        "type": "passive",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 128,
+        "unitName": "RAGNAR",
+        "nameen": "Bolster the Line",
+        "namefr": "Enfoncer les lignes",
+        "effectfr": "Lorsque vous utilisez le talent Leader, l'unité choisie peut bénéficier du talent Berserk.\n",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 129,
+        "unitName": "RAGNAR",
+        "nameen": "Shaggy Breeches",
+        "namefr": "Braies Velues",
+        "effectfr": "Ragnar ignore la premiere blessure infligée par chaque attaque.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 130,
+        "unitName": "NORNS",
+        "nameen": "Urd",
+        "namefr": "Urd",
+        "effectfr": "Choisissez 1 carte de votre défausse et placez-la sur le dessus de votre pioche.",
+        "type": "active",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 131,
+        "unitName": "NORNS",
+        "nameen": "Verdandi",
+        "namefr": "Verdandi",
+        "effectfr": "Au début de l'activation des Normes, regardez la carte du dessus de votre pioche ou de celle d'un autre joueur.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 132,
+        "unitName": "NORNS",
+        "nameen": "Skuld",
+        "namefr": "Skuld",
+        "effectfr": "AU début de l'activation des Normes, choisissez une unité adverse non-divine.\nSi ce joueur souhaite l'activer durant son prochain tour, il doit dépenser 1 carte {{AOW}}",
+        "type": "active",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 133,
+        "unitName": "SIGI",
+        "nameen": "Murder",
+        "namefr": "Meurtrier",
+        "effectfr": "Lorsque Sigi se trouve dans une zone qui contient une seule unité ennemie, il gagne +2 combat pour son attaque.",
+        "type": "passive",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 134,
+        "unitName": "SIGI",
+        "nameen": "Stealth",
+        "namefr": "Discret",
+        "effectfr": "Sigi ne subit pas le talent Bloqueur",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 135,
+        "unitName": "SIGMUND",
+        "nameen": "Metamorph",
+        "namefr": "Métamorphe",
+        "effectfr": "A son recrutement, prenez le jeton Sigmund/Loup.\nSigmund commence la partie avec son jeton déployé sur la face Sigmund. Lorsque vous utilisez ce pouvoir, placez le Jjeton sur sa face Loup.\nSigmund gagne alors +1 combat, défense et déplaceIment jusqu’au début de sa prochaine activation",
+        "type": "passive",
+        "cost": 1,
+        "token": 1
+    },
+    {
+        "id": 136,
+        "unitName": "SIGMUND",
+        "nameen": "Gram",
+        "namefr": "Gram",
+        "effectfr": "Sigmund peut contre-attaquer sans avoir à defausser de carte d'activation",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 137,
+        "unitName": "SIGURD",
+        "nameen": "Dragon's Blood",
+        "namefr": "Le sang du Dragon ",
+        "effectfr": "Lorsqu'il devrait étre détruit, Sigurd peut utiliser LE SANG DU DRAGON pour rester en jeu avec 3 points de vitalité.",
+        "type": "passive",
+        "cost": 2,
+        "token": 0
+    },
+    {
+        "id": 138,
+        "unitName": "SKULD",
+        "nameen": "Power Over Death",
+        "namefr": "Emprise sur la mort",
+        "effectfr": "Lorsqu'une troupe alliée vient d’étre détruite, vous pouvez la faire revenir immédiatement dans une Zone non-saturée adjacente a celle ot elle a été détruite.\nCet effet est appliqué avant ttout autre.",
+        "type": "permanent",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 139,
+        "unitName": "SKULD",
+        "nameen": "Chimeric Approach",
+        "namefr": "Approche chimérique",
+        "effectfr": "Une seule utilisation par partie.\nPiochez 5 cartes. Chaque autre joueur peut piocher 1 carte",
+        "type": "passive",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 140,
+        "unitName": "THRUD",
+        "nameen": "Daughter of Thunder",
+        "namefr": "Fille du tonnerre",
+        "effectfr": "{{ATT}}{{6}}\nEffectuez une attaque de zone a 6 dés dans l'une des zones des environs de Thrud.",
+        "type": "permanent",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 141,
+        "unitName": "THRUD",
+        "nameen": "Ride the lightning",
+        "namefr": "Chevaucher la foudre",
+        "effectfr": "Lorsqu'une unité alliée dans les environs de Thrud est la cible d'une attaque, Thrud peut se déplacer d'une zone avant |'étape de résolution de l'attaque.\nSi Thrud est dans la méme Zone que l'attaquant lors de la résolution de l'attaque, il subit -1 combat, ou 2 si Thrud devient la cible de l'attaque grace a son talent Gardien.",
+        "type": "passive",
+        "cost": 1,
+        "token": 0
+    },
+    {
+        "id": 142,
+        "unitName": "VALKYRIE",
+        "nameen": "Life of death",
+        "namefr": "Vie & Mort",
+        "effectfr": "A son recrutement, prenez le jeton Valkyrie.\nPlacez le jeton sur une unité dans la zone de la Valkyrie.\nLorsque l'unité s'active, choisissez si l'unité regagne ou perd 1 point de vitalité.\nLe jeton retourne alors dans votre réserve.",
+        "type": "active",
+        "cost": 1,
+        "token": 1
+    },
+    {
+        "id": 143,
+        "unitName": "LIGHT ELVES",
+        "nameen": "Troop LIGHT ELVES",
+        "namefr": "Alfes Lumineux Troupe",
+        "effecten": "If complete, this unit may carry out area attack instead of a normal attack",
+        "effectfr": "Cette unité peut changer son attaque de base en attaque de zone si elle est complète",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 144,
+        "unitName": "BERSERKERS",
+        "nameen": "Troop BERSERKERS",
+        "namefr": "BERSERKIR Troupe",
+        "effecten": "{{ran+1}} if this unit is complete ",
+        "effectfr": "{{RAN}}{{+1}} si cette unité a au moins 2 Berserkir",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 145,
+        "unitName": "ULFHEDNAR",
+        "nameen": "Troop ULFHEDNAR",
+        "namefr": "ULFHEDNAR Troupe",
+        "effecten": "{{off+1}} if this unit conatins at least two ULFHEDNAR",
+        "effectfr": "{{OFF}}{{+1}} si l'unité à au moins deux ULFHEDNAR",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 146,
+        "unitName": "JOMSVIKINGS",
+        "nameen": "Troop JOMSVIKINGS",
+        "namefr": "JOMSVIKINGS Troupe",
+        "effectfr": "Quand cette unité est détruite, avant de la retirer du plateau, faites une attaque de portée 0 contre son attaquant.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 147,
+        "unitName": "OATHBREAKERS",
+        "nameen": "Troop OATHBREAKERS",
+        "namefr": "PARJURES Troupe",
+        "effectfr": "{{OFF}}{{+1}} Si au moins 3 Parjures.\n+1 Parjures l'unité n'est pas complet à la fin de son activation.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 148,
+        "unitName": "SHIELD-MAIDENS",
+        "nameen": "Troop SHIELD-MAIDENS",
+        "namefr": "SKJALDMOS Troupe",
+        "effectfr": "Quand cette unité contre-attaque, elle bénéficie du talent projection",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 149,
+        "unitName": "SEERS",
+        "nameen": "Troop SEERS",
+        "namefr": "VOLUR Troupe",
+        "effectfr": "Quand cette unité est blessée ou détruite par une attaque, vous pouvez piocher une carte.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 150,
+        "unitName": "TYR",
+        "nameen": "Justice",
+        "namefr": "Justice",
+        "effecten": "During Tyr’s activation, you can retrieve a non-divinity card from your discard pile.\nYou choose one of your opponents to do the same.",
+        "effectfr": "Durant l’activation de Tyr, vous pouvez récupérer 1 carte de votre défausse, hors carte de divinité. L'un de vos adversaires au choix doit en faire de même.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 151,
+        "unitName": "HRAESLVEG",
+        "nameen": "Freezing wind",
+        "namefr": "Vent Glacial",
+        "effecten": "When Hraesvelg carries out a fast flight complex action, inflict 1 wound on all non-boreal units in the area where it takes flight.",
+        "effectfr": "Lorsque Hraesvelg effectue une action complexe de vol rapide, infligez 1 blessure à toutes les unités non-boréales présentes dans la zone de départ du vol.",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 152,
+        "unitName": "GARDES VAREGUES",
+        "nameen": "Troop VARANGIAN GUARDS ",
+        "namefr": "GARDES VAREGUES Troupe",
+        "effecten": "{{RAN+1}} If this untit is complete.",
+        "effectfr": "{{RAN+1}} si l'unité est complète"
+    },
+    {
+        "id": 153,
+        "unitName": "HUSCARLES",
+        "nameen": "Troop HUSCARLS",
+        "namefr": "HUSCARLS Troupe",
+        "effectfr": "Cette unité inflige 1 blessure suplémentaire lorsqu'elle blesse un troupe "
+    },
+    {
+        "id": 154,
+        "unitName": "DWARVES",
+        "nameen": "Troop DWARVES",
+        "namefr": "Nains troupe",
+        "effectfr": "Cette unité peut ignorer les effets des terrains. "
+    },
+    {
+        "id": 155,
+        "unitName": "JOFURR",
+        "nameen": "Troop JOFURR",
+        "namefr": "JOFURR troupe",
+        "effectfr": "Les attaques de cette unité ne peuvent étre redirigées si elle s'est déplacée ce tour avant d’attaquer."
+    },
+    {
+        "id": 156,
+        "unitName": "GERI & FREKI",
+        "nameen": "Troop GERI & FREKI",
+        "namefr": "GERI & FREKI troupe",
+        "effectfr": "Cette unité ne peut subir plus d’1 blessure par attaque. Toute blessure supplémentaire est ignorée.\n{{+1}} Geri & Freki, si cette unité n’est pas au complet à la fin de son activation."
+    },
+    {
+        "id": 157,
+        "unitName": "EINHERJAR",
+        "nameen": "Troop EINHERJAR",
+        "namefr": "EINHERJAR troupe",
+        "effectfr": "Cette unité ignore les effets  des talents Bloqueur et Projection."
+    },
+    {
+        "id": 158,
+        "unitName": "ODIN",
+        "nameen": "Geri & Freki",
+        "namefr": "Geri & Freki",
+        "effectfr": "A son recrutement, vous pouvez recruter le Troupe Geri & Freki pour 0 PR",
+        "type": "permanent",
+        "cost": 0,
+        "token": 0
+    },
+    {
+        "id": 159,
+        "unitName": "VALKYRIE",
+        "nameen": "Horde",
+        "namefr": "Horde",
+        "effectfr": "Durant votre tour, vous pouvez défausser 1 carte {{AOW}} pour déployer à nouveau cette unité si elle a été précédemment détruite.\r\nCe déploiement ne compte pas comme une activation. L'unité revient a pleine vitalité.",
+        "type": "permanent",
+        "cost": 1,
+        "token": 0
+    }
+]

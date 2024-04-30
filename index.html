@@ -9,57 +9,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <link rel="stylesheet" href="./assets/css/main.css">
+<link rel="stylesheet" href="./assets/css/roller.css">
 <body>
 
 
     <!--  Menu-->
     <div id="menu-bar" class="w3-bar w3-light-grey">
-
-      <!-- <div class="w3-dropdown-hover">
-        <button class="w3-button" id="type-select-name">Test<i class="fa fa-caret-down"></i></button>
-        <form id ="cb-unit-type" class="w3-dropdown-content w3-bar-block w3-card-4">
-          <a href="#" class="w3-bar-item w3-button" checked>Link 1</a>
-          <a href="#" class="w3-bar-item w3-button">Link 2</a>
-          <a href="#" class="w3-bar-item w3-button">Link 3</a>
-        </form>
-      </div> -->  
-
-       <!--    
-          <div class="w3-bar-item w3-button">
-            <input type="checkbox" id="cb-titans" value="Titans" checked>
-            <label for="cb-titans"> Titans</label>
+      <div id="MultiSelect" class="w3-dropdown-click  w3-right">
+        <input type="text" class="" placeholder="Search.." spellcheck="false">
+          <div id="autocomplete-list" class="w3-dropdown-content w3-bar-block w3-card-4 autocomplete-items">
           </div>
-          <div class="w3-bar-item w3-button">
-            <input type="checkbox" id="cb-gods"  value="Gods" checked>
-            <label for="cb-gods">Gods</label>
-          </div>
-          <div class="w3-bar-item w3-button">
-            <input type="checkbox" id="cb-monsters"  value="Monsters" checked>
-            <label for="cb-monsters">Monsters</label>
-          </div>
-          <div class="w3-bar-item w3-button">
-            <input type="checkbox" id="cb-heroes"  value="Heroes" checked>
-            <label for="cb-heroes">Heroes</label>
-          </div>
-          <div class="w3-bar-item w3-button">
-            <input type="checkbox" id="cb-troops"  value="Troops" checked>
-            <label for="cb-troops">Troops</label>
-          </div>
-        </form>
-      </div> -->
-
-      <!-- <div class="w3-dropdown-hover">
-        <button class="w3-button" id="type-select-talent">Talent<i class="fa fa-caret-down"></i></button>
-        <form id ="cb-unit-talent" class="w3-dropdown-content w3-bar-block w3-card-4">
-          <div class="w3-bar-item w3-button">
-            <input type="checkbox" id="cb-troops"  value="Archery" checked>
-            <label for="cb-troops">Archery</label>
-          </div>
-        </form>
-      </div> -->
-
-
-   <!-- <select name="unit" id="unit-select"></select> -->
+        </div> 
+        <!-- <button class="w3-button w3-padding-small w3-margin-small">Ymir <i class="fa fa fa-close" >  </i></button> -->
     </div>
 
 
@@ -67,12 +28,33 @@
 
     
      <div id="Cards" class="w3-row"> <!-- one Line -->  
+
+
+
     </div>  <!-- one Line -->
+
+    <!-- Modal pour le spinner -->
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content">
+        <div class="w3-container">
+          <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+          <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+          <p>Some text. Some text. Some text.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
 
 </body>
 </html>
 
-<script src="./assets/js/main.js"></script> 
+<script type="module">
+  import './assets/js/main.js'
+</script>
+
+
+
 
 

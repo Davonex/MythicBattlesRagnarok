@@ -161,9 +161,9 @@ body, h1, h2, h3, h4, h5, h6 {
     position: relative;   
 }
 
-.unit-power span {padding-left: 4px;position: absolute;line-height: 2.5vw;top: auto;}
+.unit-power span {padding-left: 4px;position: absolute;line-height: 4.5vw;top: auto;}
 span.power-name {font-size: 3.8vw;}
-span.power-name-large {font-size: 3.2vw;line-height: 1.8vw;}
+span.power-name-large {font-size: 3.2vw;line-height: 4.4vw;}
 .unit-power-type { width:3.6vw}
 @media (min-width:601px) { 
     span.power-name {padding-left: 4px;font-size: 1.8vw;}
@@ -226,3 +226,51 @@ span.power-name-large {font-size: 3.2vw;line-height: 1.8vw;}
     white-space:normal;
     float:none;
     outline:0}
+
+
+      
+      .autocomplete-items div {
+        padding: 10px;
+        cursor: pointer;
+        background-color: #fff; 
+        border-bottom: 1px solid #d4d4d4; 
+      }
+      
+      /*when hovering an item:*/
+      .autocomplete-items div:hover {
+        background-color: #e9e9e9; 
+      }
+      
+      /*when navigating through the items using the arrow keys:*/
+      .autocomplete-active {
+        background-color: DodgerBlue !important; 
+        color: #ffffff; 
+      }
+
+      .autocomplete-strong {
+        color: #740202; 
+      }
+
+
+      #MultiSelect {
+        border : 2px inset ButtonBorder;
+        margin: 4px;
+        
+      }
+
+      #MultiSelect input[type=text]{
+        border : 0px;
+      }
+
+      #MultiSelect .selected {
+        font-size: 10px;
+        border: 1px solid #740202;
+        background-color: #b6802936;
+        border-radius: 2px;
+        margin: 0px 2px;
+     }
+     #MultiSelect .selected i{
+        padding: 0px 4px
+     }
+      
+/* Style the input container */
