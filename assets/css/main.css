@@ -161,18 +161,18 @@ body, h1, h2, h3, h4, h5, h6 {
     position: relative;   
 }
 
-.unit-power span {padding-left: 4px;position: absolute;line-height: 4.5vw;top: auto;}
-span.power-name {font-size: 3.8vw;}
+.unit-power span {padding-left: 4px;position: absolute;line-height: 3.5vw;top: auto;}
+span.power-name {font-size: 3.8vw;line-height: 4.4vw;}
 span.power-name-large {font-size: 3.2vw;line-height: 4.4vw;}
 .unit-power-type { width:3.6vw}
 @media (min-width:601px) { 
-    span.power-name {padding-left: 4px;font-size: 1.8vw;}
-    span.power-name-large {padding-left: 4px;font-size: 1.4vw;}
+    span.power-name {padding-left: 4px;font-size: 1.8vw;line-height: 2.4vw;}
+    span.power-name-large {padding-left: 4px;font-size: 1.4vw;line-height: 2.4vw;}
     .unit-power-type { width:2vw;}
 }   
 @media (min-width:993px) {
-    span.power-name {padding-left: 4px;font-size: 1.2vw;}
-    span.power-name-large {padding-left: 4px;font-size: 0.9vw;}
+    span.power-name {padding-left: 4px;font-size: 1.2vw;line-height: 2.4vw;}
+    span.power-name-large {padding-left: 4px;font-size: 0.9vw;line-height: 2vw;}
     .unit-power-type { width:1.5vw;}
 }
 
@@ -187,11 +187,11 @@ span.power-name-large {font-size: 3.2vw;line-height: 4.4vw;}
 
 
 .unit-name span {position:absolute;color:white;}
-.unit-name span.name {font-size:4.3vw;left: 21%;top:6%}
+.unit-name span.name {font-size:4.3vw;left: 21%;top:6% ; line-height: 2.4vw;} 
 .unit-name span.name_large {font-size:3.5vw;left: 21%;top:8%}
 .unit-name span.rp {left:9%;top:5%;font-size:4.3vw}
 @media (min-width:601px) { 
-        .unit-name span.name {left: 23%;font-size:2.2vw;top:3.7%;}
+        .unit-name span.name {left: 23%;font-size:2.2vw;top:3.7%;line-height: 2.4vw;}
         .unit-name span.name_large {font-size:1.8vw;top:4.2%;}
         .unit-name span.rp {left:8.5%;top:4.2%;font-size:2.2vw}
     }

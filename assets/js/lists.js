@@ -12,8 +12,7 @@ export class ObjetLists {
         this._type[2] = {"name" : "Monsters", "effect":"" }
         this._type[1] = {"name" : "Heroes", "effect":"" }
         this._type[4] = {"name" : "Troops", "effect":"" }
-        const FormType =  this._AddForm ("Type")
-        this._CheckBox (FormType,this._type,"Type")
+        
         //(this._type,"Type")
         this._filter=[]
         this._powerload=false
@@ -21,15 +20,17 @@ export class ObjetLists {
 
 
     get Talents() {return this._talents }
+    get Powers() {return this._powers }
+    get Types() {return this._types }
     get PowerLoad () {return this._powerload}
 
     /**
      * 
      * @param {*} Obj 
      */
-    AddTalents (Pro) {
+    AddTalents (Obj) {
         //console.log (Pro)
-        Pro.then ((Obj)=>{
+        // Pro.then ((Obj)=>{
             for (const property in Obj) {
                 //console.log (Obj[property])
                 this._talents[Obj[property].id] =  {
@@ -37,40 +38,31 @@ export class ObjetLists {
                      "effect": Obj[property].effet    
                 }
             }
-            console.log ("Talents : Fini")
-        })
-        .catch(error => console.log(error))
-
-        
+            //console.log ("Talents : Fini")
+        // })
+        // .catch(error => console.log(error))
         //const FormTalent = this._AddForm("Talent")
         //this._Select (FormTalent,this._talents,"Talent")
-        return this
+       
     } 
 
     /**
      * 
      * @param {*} Obj 
      */
-    AddPowers (Pro) {
-        Pro.then ((Obj)=>{
-            for (const property in Obj) {
-                // console.log (Obj[property])
-                this._powers[Obj[property].id] =  {
-                    "name": Obj[property].namefr,
-                    "effect": Obj[property].effectfr,    
-                    "type": Obj[property].type,
-                    "cost": Obj[property].cost,    
-                    "token": Obj[property].token
-                    
-                }
+    AddPowers (Obj) {
+        for (const property in Obj) {
+            // console.log (Obj[property])
+            this._powers[Obj[property].id] =  {
+                "name": Obj[property].namefr,
+                "effect": Obj[property].effectfr,    
+                "type": Obj[property].type,
+                "cost": Obj[property].cost,    
+                "token": Obj[property].token
+                
             }
-            console.log ("Powers : Fini")
-            this._powerload=true
-        })
-        .catch(error => console.log(error))
-        //console.log (this._powers)
-        // const FormPower = this._AddForm("Power")
-        // this._Select (FormPower,this._powers,"Power")
+        }
+        //console.log ("Powers : Fini")
 
     } 
 
@@ -83,7 +75,10 @@ export class ObjetLists {
     PowerCost(id){return this._powers[id].cost }
     PowerToken(id){return this._powers[id].token }
     
-
+    MenuGods (callback){
+        const FormType =  this._AddForm ("Type")
+        this._CheckBox (FormType,this._type,"Type",callback)
+    }
 
 
     /**
@@ -124,7 +119,7 @@ export class ObjetLists {
          * @param {*} Liste 
          * @param {String} MenuType 
          */
-    _CheckBox (HtmlForm,Liste,MenuType){
+    _CheckBox (HtmlForm,Liste,MenuType,callback){
         // loop to add all element checkbox
         for (const id in Liste) {
             const HtmlDivButton = document.createElement("div")
@@ -149,7 +144,7 @@ export class ObjetLists {
                 //         + "\nValue : "  +  e.currentTarget.id.split('_')[1]
                 //         + "\n =>"  +  e.currentTarget.checked)   
                     const extract = e.currentTarget.id.split('_')
-                   this._Changefilter (extract[0],extract[1],e.currentTarget.checked) 
+                    callback.call (this,extract[0],extract[1],e.currentTarget.checked) 
 
             })
         }
@@ -220,4 +215,7 @@ export class ObjetLists {
 
 
 }
+
+
+
 

@@ -43,16 +43,19 @@ export function AutoComplete(Container, Obj, Units) {
                   /*insert the value for the autocomplete text field:*/
                   Container.value = ""
                   const ContainerMultiSelect = document.getElementById("MultiSelect")
-                  const theFirstChild = ContainerMultiSelect.firstChild
+                  const theFirstChild = ContainerMultiSelect
+                  //.firstChild
                   //console.log (ContainerMultiSelect)
                   const SpanSelected = Elements.CreateSpanWithClass(["selected"]);
                   SpanSelected.innerHTML = this.getElementsByTagName("input")[0].value
                   SpanSelected.appendChild(Elements.CreateItalicWithClass (["fa","fa-close"]))
                   ContainerMultiSelect.insertBefore (SpanSelected,theFirstChild)
                   /* Add Filter to Unit  */
-                  Units.AddFilter ("Talent",Obj[i])
+                    console.log ("AddFilter this filter")
+                    Units.UpdateFilter ("Talent",Obj[i],true)
                   /*execute a function when someone clicks on the spam selected (SPAN element):*/
                   SpanSelected.addEventListener("click", function(e) {
+                    Units.UpdateFilter ("Talent",Obj[i],false)
                     console.log ("remove this filter")
                     /* Remove Filter to Unit  */
                   })

@@ -1,4 +1,5 @@
 import  * as Elements from './elements.js'
+import  * as ObjetLists from './lists.js'
 
 /**
  * 
@@ -10,7 +11,7 @@ class Unit {
      * @param {Object} Objet - Objet from the Units.json file (One Unit)
      */
     constructor(Objet,Lists) {
-        this._lists = Lists
+        //this._lists = Lists
         this._id = Objet.id
         this._name = Objet.namefr
         this._rp = Objet.rp
@@ -24,6 +25,7 @@ class Unit {
         this._aow = Objet.aow
         this._box = Objet.box
         this._class = []
+        this._lists = Lists
         Objet.class?.split(',').forEach((item) => this._class.push(item))
         this._talents = []
             if (typeof (Objet.talent1) !== 'undefined') { this.Talent = Objet.idt1 }
@@ -35,8 +37,8 @@ class Unit {
             if (typeof (Objet.idpower2) !== 'undefined') {this._powers.push(Objet.idpower2) }
             if (typeof (Objet.idpower3) !== 'undefined') {this._powers.push(Objet.idpower3) }
 
-        const Cards = document.getElementById("Cards")
-        Cards.appendChild (this._AddCard ())
+        // const Cards = document.getElementById("Cards")
+        // Cards.appendChild (this._AddCard ())
         /// Manage filter
         //this._filter = {} 
         //this.Visibility = document.getElementById("cb-"+this._type.toLowerCase()).checked
@@ -104,7 +106,7 @@ class Unit {
      * Private Method to add a card
      * _AddCard : Add Html code for this Unit
      */
-    _AddCard() {
+    ShowCard() {
         
         this._HTMLContainer = Elements.CreateDivWithClass(["w3-col", "m6", "l4" ,"unit-card"])
         this._HTMLCard = Elements.CreateDivWithClass(["units","unit-" + this._type.toLowerCase()])
@@ -361,50 +363,138 @@ class Unit {
 
 export class ObjetUnits {
     /* construtor */
-    constructor(Lists) {
+    constructor() {
         this.CurentUnit = 1
         this._listUnits = []
-        this._lists = Lists
+        this._lists = new ObjetLists.ObjetLists
+        this._talents = []
+        this._powers = []
         this._filter=[]
     }
 
-    Add(Pro) {
+    AddAllUnits(Pro,cb_AddFilter) {
         //this._list[obj._id] = obj
+        const Cards = document.getElementById("Cards")
+        // Cards.appendChild (this._AddCard ())
         Pro.then ((units)=>{
             for (const property in units) {
-                if (
-                    true
-                    // units[property].name === "ANGRBODA" 
+                if ( true // units[property].name === "ANGRBODA" 
                 ) 
                 {
-                    let obj = new Unit(units[property],this._lists);
-                    // Rag.Add(obj);
-                    this._listUnits[obj._id] = obj
-                    console.info (obj)
+                    let OneUnit = new Unit(units[property],this._lists);
+                    Cards.appendChild (OneUnit.ShowCard())
+                    this._listUnits[OneUnit._id] = OneUnit
                 }
                 
             }
+            this._lists.MenuGods (cb_AddFilter)
+            
             console.log ("Units : Fini")
         })
         .catch(error => console.log(error))
     }
 
+       /**
+     * 
+     * @param {*} Obj 
+     */
+       AddTalents (Pro) {
+        //console.log (Pro)
+        Pro.then ((Obj)=>{
+            this._lists.AddTalents(Obj) 
+           // console.log ("Talents : Fini")
+        })
+        .catch(error => console.log(error)) 
+    } 
+    /**
+     * 
+     * @param {*} Obj 
+     */
+    AddPowers (Pro) {
+        
+    Pro.then ((Obj)=>{
+        for (const property in Obj) {
+            this._lists.AddPowers(Obj) 
+        }
+        console.log ("Powers : Fini")
+        this._powerload=true
+    })
+    .catch(error => console.log(error))
+    //console.log (this._powers)
+    // const FormPower = this._AddForm("Power")
+    // this._Select (FormPower,this._powers,"Power")
+
+    }
+
     /**
      * get List of unity
      */
-    get ListUnits() {
-        return this._listUnits
-    }
+    get ListUnits() {return this._listUnits}
+    get ListTalents() {return this._lists.Talents}
+    get ListPowers() {return this._lists.Powers}
 
+
+    ShowAll (Promesse) {
+        Promesse.then (() =>{
+            console.log ( "Rag.showAll")
+            const Cards = document.getElementById("Cards")
+            // Cards.appendChild (this._AddCard ())
+            for (const id in this._listUnits) {
+                Cards.appendChild (this._listUnits[id].ShowCard())
+                
+            }
+        })
+        Promesse.catch(error => console.log(error))
+    }
      /**
      * 
      * @param {*} Type 
      * @param {*} Value 
      */
-     AddFilter (Type,Value){
-        this._filter.push ({"type":Type , "value":Value}) 
-        console.log ("Add" +  this._filter)
+     UpdateFilter (field,value,BoolVal){
+        if (! BoolVal)  {
+            // On doit cacher donc on ajoute le filtre
+            this._filter.push ({"field":field , "value":value})
+        } else {
+        // on doit Effacer le liftre si il existe 
+        this._filter.filter(function (rule,index,arr) {
+                    if (rule.field == field && rule.value == value) 
+                    {
+                        arr.splice(index, 1);
+                        return true; // on efface
+
+                    }
+                } );
+        }
+        this.Applyfilter ()
+        console.log ("UpdateFilter : " ,  this._filter)
+
      }
+
+
+     Applyfilter ()
+     {
+         for(let IdUnit in this._listUnits){
+             let IsVisible = true
+             for (let IdRule in this._filter) {
+                 if ( this._CheckRule (this._filter[IdRule],this._listUnits[IdUnit]) )
+                 {
+                     IsVisible = false
+                     break
+                 }
+             }
+ 
+             this._listUnits[IdUnit].Visibility = IsVisible
+         } 
+     }
+
+     _CheckRule (OneRule,OneUnit)
+     {
+         const FunctionIs = "Is" + OneRule.field
+         if ( OneUnit[FunctionIs](OneRule.value) )
+           { return true }  else { return false }
+     }
+
     /**
      *  
      * */ 
